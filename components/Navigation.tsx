@@ -10,7 +10,7 @@ export default function Navigation() {
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: "smooth" });
+    element?.scrollIntoView();
     setIsOpen(false);
   };
 

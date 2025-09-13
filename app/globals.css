@@ -126,6 +126,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Added custom styles for Better Call Saul inspired elements */
 .hero-title {
   font-family: "Times New Roman", serif;
@@ -151,7 +155,6 @@
 .animate-footer-glow {
   animation: footer-glow 3s ease-in-out infinite;
 }
-
 
 /* Contact */
 @keyframes circleExpand {
