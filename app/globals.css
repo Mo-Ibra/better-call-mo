@@ -156,7 +156,7 @@ html {
   animation: footer-glow 3s ease-in-out infinite;
 }
 
-/* Contact */
+/* Contact Animation */
 @keyframes circleExpand {
   0% {
     width: 100px;
