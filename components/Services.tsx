@@ -77,7 +77,7 @@ const services = [
 export default function Services() {
   const scrollToContact = () => {
     const element = document.getElementById("contact");
-    element?.scrollIntoView({ behavior: "smooth" });
+    element?.scrollIntoView();
   };
 
   return (

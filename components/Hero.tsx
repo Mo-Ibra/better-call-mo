@@ -83,11 +83,11 @@ function ParticleBackground() {
 export default function Hero() {
   const scrollToContact = () => {
     const element = document.getElementById("contact");
-    element?.scrollIntoView({ behavior: "smooth" });
+    element?.scrollIntoView();
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden" id="hero">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(16,185,129,0.15),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(16,185,129,0.1),transparent_50%)]" />
