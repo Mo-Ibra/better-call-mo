@@ -54,7 +54,7 @@ export default function FAQs() {
   }
 
   return (
-    <section id="faq" className="py-24 bg-background relative overflow-hidden">
+    <section id="faq" className="py-20 bg-background relative overflow-hidden">
       {/* Background particles */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>

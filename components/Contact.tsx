@@ -1,216 +1,49 @@
-"use client";
-
-import type React from "react";
-
-import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
-
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" });
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
   return (
-    <section id="contact" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-            Ready to <span className="text-primary">Call Mo?</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
-            {
-              "Got a project in mind? Need a consultation? Don't wait - let's discuss how I can help bring your vision to life."
-            }
-          </p>
-        </div>
+    <section
+      id="contact"
+      className="relative py-20 sm:px-8 sm:py-32 overflow-hidden border-t border-neutral-700 bg-gradient-to-b from-[#0a0a0a] to-black text-white text-center"
+    >
+      {/* Circles Animation */}
+      <div className="absolute inset-0 opacity-30">
+        <div
+          className="cta-circle top-1/2 left-1/2"
+          style={{ animationDelay: "0s" }}
+        ></div>
+        <div
+          className="cta-circle top-1/2 left-1/2"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="cta-circle top-1/2 left-1/2"
+          style={{ animationDelay: "2s" }}
+        ></div>
+      </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
-          <Card className="border-border">
-            <CardHeader>
-              <CardTitle className="text-2xl">
-                {"Let's Build Something Amazing"}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium mb-2"
-                    >
-                      Name
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Your name"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium mb-2"
-                    >
-                      Email
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="your@email.com"
-                      required
-                    />
-                  </div>
-                </div>
+      {/* Content */}
+      <div className="relative z-10 max-w-3xl px-4 mx-auto">
+        <h2 className="text-4xl sm:text-8xl font-extrabold tracking-tight mb-8 relative">
+          Ready to Scale Your Brand?
+          <span className="block absolute -bottom-3 left-1/2 -translate-x-1/2 w-24 h-1.5 bg-emerald-400 rounded-md shadow-[0_0_20px_#00ff88]"></span>
+        </h2>
 
-                <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium mb-2"
-                  >
-                    Subject
-                  </label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    placeholder="What's your project about?"
-                    required
-                  />
-                </div>
+        <p className="text-lg sm:text-xl text-white/80 leading-relaxed mb-2">
+          I craft websites that speak for your brand—fast, modern, and
+          unforgettable.
+        </p>
+        <p className="text-lg sm:text-xl text-white/80 leading-relaxed mb-6">
+          Better Call Mo before your next big idea goes unnoticed.
+        </p>
 
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium mb-2"
-                  >
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell me about your project, timeline, and budget..."
-                    rows={6}
-                    required
-                  />
-                </div>
+        <button className="inline-block px-8 py-4 sm:px-12 sm:py-5 border border-emerald-400 text-emerald-400 font-bold text-sm sm:text-base uppercase tracking-wider rounded-xl relative overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-[0px_5px_50px_rgba(0,255,136,0.4)] active:scale-95">
+          Let's chat now!
+        </button>
+      </div>
 
-                <Button
-                  type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-lg py-6"
-                >
-                  <Send className="w-4 h-4 mr-2" />
-                  Send Message
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <Card className="border-primary/20">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <Mail className="w-6 h-6 text-primary mt-1" />
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Email Me</h3>
-                    <p className="text-muted-foreground mb-2">
-                      {"Ready to start your project? Drop me a line!"}
-                    </p>
-                    <a
-                      href="mailto:mo@codingwithmo.com"
-                      className="text-primary hover:underline font-medium"
-                    >
-                      mo@codingwithmo.com
-                    </a>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-primary/20">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <Phone className="w-6 h-6 text-primary mt-1" />
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Call Me</h3>
-                    <p className="text-muted-foreground mb-2">
-                      {"Prefer to talk? I'm available for consultations."}
-                    </p>
-                    <a
-                      href="tel:+1234567890"
-                      className="text-primary hover:underline font-medium"
-                    >
-                      +1 (234) 567-8900
-                    </a>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-primary/20">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <MapPin className="w-6 h-6 text-primary mt-1" />
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Location</h3>
-                    <p className="text-muted-foreground mb-2">
-                      {"Based in the digital world, serving clients globally."}
-                    </p>
-                    <span className="text-primary font-medium">
-                      Remote & Available Worldwide
-                    </span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <div className="bg-card/50 p-6 rounded-lg border border-border">
-              <h3 className="text-xl font-semibold mb-4 text-center">
-                {'Why "Better Call Mo"?'}
-              </h3>
-              <p className="text-muted-foreground text-center text-balance">
-                {
-                  "Just like Saul Goodman was the go-to guy for impossible situations, I'm your go-to developer for challenging web projects. No project too complex, no deadline too tight!"
-                }
-              </p>
-            </div>
-          </div>
-        </div>
+      {/* Spot Left */}
+      <div className="flex items-center justify-center gap-2 mt-6 text-sm font-medium text-white/80">
+        <span className="w-2.5 h-2.5 bg-emerald-400 rounded-full"></span>
+        <span>1 spot left</span>
       </div>
     </section>
   );
