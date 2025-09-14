@@ -75,7 +75,25 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submission:", formData);
-    setShowSuccess(true);
+    try {
+      const res = await fetch('/api/send-email', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        console.log("Email sent successfully");
+        setShowSuccess(true);
+      } else {
+        console.error("Failed to send email");
+      }
+
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
 
   const closeModal = () => {
