@@ -67,10 +67,15 @@ const services = [
   },
   {
     icon: Palette,
-    title: "UI/UX Design",
+    title: "WordPress Development",
     description:
-      "Beautiful, intuitive interfaces that provide exceptional user experiences.",
-    features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
+      "Custom WordPress themes and plugins to meet your specific needs and requirements.",
+    features: [
+      "Theme Customization",
+      "Plugin Integration",
+      "Custom Post Types",
+      "Custom Taxonomies",
+    ],
   },
 ];
 
