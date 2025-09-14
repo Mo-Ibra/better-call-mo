@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Globe, Smartphone, Zap, Shield, Search, Palette } from "lucide-react";
+import { Globe, Smartphone, Zap, Shield, Search, Palette, Code2 } from "lucide-react";
 
 const services = [
   {
@@ -66,7 +66,7 @@ const services = [
     ],
   },
   {
-    icon: Palette,
+    icon: Code2,
     title: "WordPress Development",
     description:
       "Custom WordPress themes and plugins to meet your specific needs and requirements.",
