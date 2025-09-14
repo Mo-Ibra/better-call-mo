@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Globe, Smartphone, Zap, Shield, Search, Palette, Code2 } from "lucide-react";
+import { Globe, Smartphone, Zap, Shield, Search, Code2 } from "lucide-react";
 
 const services = [
   {
