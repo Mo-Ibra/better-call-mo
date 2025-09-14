@@ -5,9 +5,21 @@ interface ContactModalProps {
   onClose: () => void;
 }
 
+interface FormDataProps {
+  projectType: string;
+  niche: string;
+  website: string;
+  hasWebsite: string;
+  services: string[];
+  budget: number;
+  fullName: string;
+  email: string;
+  message: string;
+}
+
 const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   const [currentStep, setCurrentStep] = useState(1);
-  const [formData, setFormData] = useState<any>({
+  const [formData, setFormData] = useState<FormDataProps>({
     projectType: "",
     niche: "",
     website: "",
@@ -42,11 +54,11 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   }, [isOpen]);
 
   const handleInputChange = (name: string, value: string | number) => {
-    setFormData((prev: any) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const toggleService = (service: string) => {
-    setFormData((prev: any) => {
+    setFormData((prev) => {
       const services = prev.services || [];
       return services.includes(service)
         ? { ...prev, services: services.filter((s: string) => s !== service) }
@@ -112,7 +124,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         {/* Header */}
         <div className="text-center pt-16 pb-8 px-8">
           <h3 className="text-3xl font-black text-white mb-2 tracking-tight">
-            Let's Talk About Your Project 🚀
+            Let&apos;s Talk About Your Project 🚀
           </h3>
           <p className="text-muted-foreground text-opacity-60 text-base">
             Answer a few quick questions so I can understand your needs
@@ -328,7 +340,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               {/* Step 5: Budget */}
               <div className={`${currentStep === 5 ? 'block animate-fade-in' : 'hidden'}`}>
                 <h4 className="text-xl font-semibold text-white mb-6 leading-relaxed">
-                  What's your expected budget?
+                  What&apos;s your expected budget?
                 </h4>
                 <div className="mb-8">
                   <input
@@ -425,7 +437,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               </div>
               <h3 className="text-4xl font-black text-white mb-4">Thank You! 🎉</h3>
               <p className="text-white text-opacity-80 text-lg mb-8 leading-relaxed">
-                I'll get back to you as soon as possible.
+                I&apos;ll get back to you as soon as possible.
               </p>
               <button 
                 onClick={closeModal}

@@ -21,10 +21,12 @@ export default function About() {
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <img
+              <Image
                 src="/images/mo-ibra.jpg"
                 alt="Mo - Web Developer"
                 className="rounded-lg shadow-2xl w-full max-w-md mx-auto"
+                width={1024}
+                height={1024}
               />
             </div>
 
