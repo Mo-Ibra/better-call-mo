@@ -131,7 +131,7 @@ export default function Hero() {
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-balance">
-              {"Need a website that actually works? I'm your developer."}
+              Need a website that actually works? I&apos;m your developer.
             </p>
 
             {/* Social Proof Stats */}
@@ -174,7 +174,7 @@ export default function Hero() {
                     month
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    Don't miss out - secure your spot before it's too late!
+                    Don&apos;t miss out - secure your spot before it&apos;s too late!
                   </p>
                 </div>
               </div>
@@ -190,14 +190,14 @@ export default function Hero() {
                 <div className="flex items-center gap-3 text-sm">
                   <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                   <span className="text-muted-foreground">
-                    100% satisfaction guarantee - We don't stop until you're
+                    100% satisfaction guarantee - We don&apos;t stop until you&apos;re
                     happy
                   </span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                   <span className="text-muted-foreground">
-                    Free consultation - Let's discuss your project today
+                    Free consultation - Let&apos;s discuss your project today
                   </span>
                 </div>
               </div>

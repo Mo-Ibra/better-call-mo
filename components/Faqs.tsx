@@ -73,7 +73,7 @@ export default function FAQs() {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Got questions? I've got answers. Here are the most common questions clients ask about my web development
+            Got questions? I&apos;ve got answers. Here are the most common questions clients ask about my web development
             services.
           </p>
         </div>
@@ -116,7 +116,7 @@ export default function FAQs() {
 
         {/* Call to action */}
         <div className="text-center mt-16">
-          <p className="text-lg text-muted-foreground mb-6">Still have questions? Don't hesitate to reach out!</p>
+          <p className="text-lg text-muted-foreground mb-6">Still have questions? Don&apos;t hesitate to reach out!</p>
           <a
             href="#contact"
             className="inline-flex items-center px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors duration-200 hover:shadow-lg hover:shadow-emerald-500/25"

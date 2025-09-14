@@ -36,7 +36,7 @@ export default function Contact() {
         </p>
 
         <button className="inline-block px-8 py-4 sm:px-12 sm:py-5 border border-emerald-400 text-emerald-400 font-bold text-sm sm:text-base uppercase tracking-wider rounded-xl relative overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-[0px_5px_50px_rgba(0,255,136,0.4)] active:scale-95">
-          Let's chat now!
+          Let&apos;s chat now!
         </button>
       </div>
 

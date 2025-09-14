@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { User, Coffee, Lightbulb } from "lucide-react";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -116,9 +117,11 @@ export default function About() {
                   className="group flex flex-col items-center p-4 rounded-lg border border-primary/20 bg-card/50 hover:bg-card hover:border-primary/40 transition-all duration-300 hover:scale-105"
                 >
                   <div className="w-12 h-12 mb-3 rounded-lg overflow-hidden bg-background/50 flex items-center justify-center group-hover:shadow-lg group-hover:shadow-primary/20 transition-all duration-300">
-                    <img
+                    <Image
                       src={tech.image || "/placeholder.svg"}
                       alt={`${tech.name} logo`}
+                      width={10}
+                      height={10}
                       className="w-10 h-10 object-contain"
                     />
                   </div>
