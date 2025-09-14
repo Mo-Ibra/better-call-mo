@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Star, Users, Clock, CheckCircle } from "lucide-react";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 
@@ -80,6 +80,28 @@ function ParticleBackground() {
   );
 }
 
+function MainRandomImage() {
+  const images = [
+    // "/images/saul-1.png",
+    "/images/saul-2.png",
+    "/images/saul-3.webp",
+  ];
+
+  const randomIndex = Math.floor(Math.random() * images.length);
+  const randomImage = images[randomIndex];
+
+  return (
+    <Image
+      src={randomImage}
+      alt="Better Call Mo - Professional Web Developer"
+      width={1000}
+      height={1000}
+      className="w-full max-w-md h-auto object-contain drop-shadow-2xl"
+      priority
+    />
+  );
+}
+
 export default function Hero() {
   const scrollToContact = () => {
     const element = document.getElementById("contact");
@@ -87,7 +109,10 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden" id="hero">
+    <section
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-12 lg:pt-0"
+      id="hero"
+    >
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(16,185,129,0.15),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(16,185,129,0.1),transparent_50%)]" />
@@ -109,56 +134,70 @@ export default function Hero() {
               {"Need a website that actually works? I'm your developer."}
             </p>
 
+            {/* Social Proof Stats */}
             <div className="mb-12">
-              <h3 className="text-lg font-semibold text-center lg:text-left mb-6 text-primary">
-                Our Stack
-              </h3>
-              <div className="flex items-center justify-center lg:justify-start gap-6 flex-wrap">
-                {/* Next.js */}
-                <div className="group flex flex-col items-center gap-3 bg-card/90 backdrop-blur-sm p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 min-w-[120px]">
-                  <div className="relative w-12 h-12 flex items-center justify-center">
-                    <Image
-                      src="/images/next-js-logo-black-and-white.jpg"
-                      alt="Next.js"
-                      width={48}
-                      height={48}
-                      className="group-hover:scale-110 transition-transform duration-300"
-                    />
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                <div className="bg-card/90 backdrop-blur-sm p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Users className="w-6 h-6 text-primary" />
+                    <span className="text-2xl font-bold text-primary">15+</span>
                   </div>
-                  <span className="text-sm font-medium text-center">
-                    Next.js
-                  </span>
+                  <p className="text-sm text-muted-foreground">
+                    Satisfied Clients
+                  </p>
                 </div>
 
-                {/* Tailwind CSS */}
-                <div className="group flex flex-col items-center gap-3 bg-card/90 backdrop-blur-sm p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 min-w-[120px]">
-                  <div className="relative w-12 h-12 flex items-center justify-center">
-                    <Image
-                      src="/images/tailwind-css-logo-blue-wind-icon.jpg"
-                      alt="Tailwind CSS"
-                      width={48}
-                      height={48}
-                      className="group-hover:scale-110 transition-transform duration-300"
-                    />
+                <div className="bg-card/90 backdrop-blur-sm p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Star className="w-6 h-6 text-primary" />
+                    <span className="text-2xl font-bold text-primary">5.0</span>
                   </div>
-                  <span className="text-sm font-medium text-center">
-                    Tailwind CSS
+                  <p className="text-sm text-muted-foreground">
+                    Average Rating
+                  </p>
+                </div>
+              </div>
+
+              {/* Urgency Banner */}
+              <div className="bg-gradient-to-r from-primary/20 to-primary/10 border border-primary/30 rounded-xl p-6 mb-6 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_70%)]" />
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Clock className="w-5 h-5 text-primary animate-pulse" />
+                    <span className="text-sm font-semibold text-primary uppercase tracking-wide">
+                      Limited Availability
+                    </span>
+                  </div>
+                  <p className="text-lg font-bold text-foreground mb-2">
+                    Currently accepting only{" "}
+                    <span className="text-primary">2 new clients</span> this
+                    month
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Don't miss out - secure your spot before it's too late!
+                  </p>
+                </div>
+              </div>
+
+              {/* Quick Benefits */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 text-sm">
+                  <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span className="text-muted-foreground">
+                    Fast delivery - Most projects completed in 2-4 weeks
                   </span>
                 </div>
-
-                {/* ShadCN */}
-                <div className="group flex flex-col items-center gap-3 bg-card/90 backdrop-blur-sm p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 min-w-[120px]">
-                  <div className="relative w-12 h-12 flex items-center justify-center">
-                    <Image
-                      src="/images/shadcn-ui-logo-modern-component-library-icon.jpg"
-                      alt="ShadCN"
-                      width={48}
-                      height={48}
-                      className="group-hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <span className="text-sm font-medium text-center">
-                    ShadCN
+                <div className="flex items-center gap-3 text-sm">
+                  <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span className="text-muted-foreground">
+                    100% satisfaction guarantee - We don't stop until you're
+                    happy
+                  </span>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span className="text-muted-foreground">
+                    Free consultation - Let's discuss your project today
                   </span>
                 </div>
               </div>
@@ -168,10 +207,10 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-lg px-8 py-6 neon-glow"
+                className="bg-primary hover:bg-primary/90 text-lg px-8 py-6 neon-glow animate-pulse"
                 onClick={scrollToContact}
               >
-                {"Let's Build Something"}
+                {"Book Your Spot Now"}
               </Button>
               <Button
                 variant="outline"
@@ -192,14 +231,7 @@ export default function Hero() {
             <div className="relative">
               {/* Main image */}
               <div className="relative z-10 transform hover:scale-105 transition-transform duration-300">
-                <Image
-                  src="/images/saul-goodman-mo.png"
-                  alt="Better Call Mo - Professional Web Developer"
-                  width={300}
-                  height={500}
-                  className="w-full max-w-md h-auto object-contain drop-shadow-2xl"
-                  priority
-                />
+                <MainRandomImage />
               </div>
             </div>
           </div>
