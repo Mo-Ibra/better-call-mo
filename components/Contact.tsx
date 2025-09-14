@@ -1,4 +1,8 @@
-export default function Contact() {
+interface ContactProps {
+  openQuiz: () => void;
+}
+
+export default function Contact({ openQuiz }: ContactProps) {
   return (
     <section
       id="contact"
@@ -35,7 +39,10 @@ export default function Contact() {
           Better Call Mo before your next big idea goes unnoticed.
         </p>
 
-        <button className="inline-block px-8 py-4 sm:px-12 sm:py-5 border border-emerald-400 text-emerald-400 font-bold text-sm sm:text-base uppercase tracking-wider rounded-xl relative overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-[0px_5px_50px_rgba(0,255,136,0.4)] active:scale-95">
+        <button
+          onClick={openQuiz}
+          className="inline-block px-8 py-4 sm:px-12 sm:py-5 border border-emerald-400 text-emerald-400 font-bold text-sm sm:text-base uppercase tracking-wider rounded-xl relative overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-[0px_5px_50px_rgba(0,255,136,0.4)] active:scale-95"
+        >
           Let&apos;s chat now!
         </button>
       </div>
