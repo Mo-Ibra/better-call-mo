@@ -43,7 +43,7 @@ export default function Contact() {
       {/* Spot Left */}
       <div className="flex items-center justify-center gap-2 mt-6 text-sm font-medium text-white/80">
         <span className="w-2.5 h-2.5 bg-emerald-400 rounded-full"></span>
-        <span>1 spot left</span>
+        <span>2 spot left</span>
       </div>
     </section>
   );
