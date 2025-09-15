@@ -131,7 +131,7 @@ export default function Hero() {
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-balance">
-              Need a website that actually works? I&apos;m your developer.
+              Need a website that actually works? I&apos;m your developer!
             </p>
 
             {/* Social Proof Stats */}
