@@ -84,6 +84,8 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         body: JSON.stringify(formData),
       });
 
+      console.log(res);
+
       if (res.ok) {
         console.log("Email sent successfully");
         setShowSuccess(true);
