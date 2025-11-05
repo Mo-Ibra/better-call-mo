@@ -1,16 +1,13 @@
 // app/blog/[slug]/page.tsx
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import {
-  getBlogPost,
-  getAllBlogSlugs,
-  extractHeadings,
-} from "@/lib/blog";
+import { getBlogPost, getAllBlogSlugs, extractHeadings } from "@/lib/blog";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ClientContactModal from "@/components/ClientContactModal";
 import ClientArticle from "@/components/ClientArticle";
 import TableOfContents from "@/components/TableOfContent";
+import SideAd from "@/components/SideAd";
 
 interface BlogPostPageProps {
   params: { slug: string };
@@ -120,13 +117,21 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
       />
       <Navigation />
       <div className="relative max-w-5xl mx-auto px-4 py-12">
-        <div className="hidden xl:block absolute right-[-18rem] top-0 bottom-6">
-          <div className="sticky top-24">
-            <TableOfContents headings={headings} />
+        <div className="relative flex justify-center">
+          <div className="hidden xl:block absolute left-[-25rem] top-0 bottom-6">
+            <div className="sticky top-24">
+              <SideAd />
+            </div>
+          </div>
+
+          <ClientArticle post={post} />
+
+          <div className="hidden xl:block absolute right-[-18rem] top-0 bottom-6">
+            <div className="sticky top-24">
+              <TableOfContents headings={headings} />
+            </div>
           </div>
         </div>
-
-        <ClientArticle post={post} />
       </div>
       <ClientContactModal />
       <Footer />

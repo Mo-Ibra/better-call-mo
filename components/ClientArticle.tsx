@@ -6,7 +6,7 @@ import remarkGfm from "remark-gfm";
 
 export default function ClientArticle({ post }: { post: BlogPost}) {
   return (
-    <article className="max-w-4xl mx-auto">
+    <article className="md:max-w-5xl max-w-4xl mx-auto">
       <header className="mb-8">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           {post.frontmatter.title}
