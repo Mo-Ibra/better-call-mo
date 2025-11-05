@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -8,68 +9,59 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    element?.scrollIntoView();
-    setIsOpen((prev) => !prev);
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    setIsOpen((prev) => !prev);
-  };
-
   return (
     <nav className="sticky top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div
+          {/* Logo */}
+          <Link
+            href="/"
             className="text-2xl font-bold text-primary cursor-pointer"
-            onClick={() => scrollToTop()}
           >
             {"<Mo />"}
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToTop()}
+            <Link
+              href="/#home"
               className="text-foreground hover:text-primary transition-colors"
             >
               Home
-            </button>
-            <button
-              onClick={() => scrollToSection("about")}
+            </Link>
+            <Link
+              href="/#about"
               className="text-foreground hover:text-primary transition-colors"
             >
               About
-            </button>
-            <button
-              onClick={() => scrollToSection("services")}
+            </Link>
+            <Link
+              href="/#services"
               className="text-foreground hover:text-primary transition-colors"
             >
               Services
-            </button>
-            <button
-              onClick={() => scrollToSection("projects")}
+            </Link>
+            <Link
+              href="/#projects"
               className="text-foreground hover:text-primary transition-colors"
             >
               Projects
-            </button>
-            <button
-              onClick={() => scrollToSection("faqs")}
+            </Link>
+            <Link
+              href="/#faqs"
               className="text-foreground hover:text-primary transition-colors"
             >
               Faqs
-            </button>
+            </Link>
           </div>
+
+          {/* Hire Me button */}
           <div className="hidden md:block">
-            <Button
-              onClick={() => scrollToSection("contact")}
-              className="bg-primary hover:bg-primary/90"
-            >
-              Hire Me!
-            </Button>
+            <Link href="#contact">
+              <Button className="bg-primary hover:bg-primary/90">
+                Hire Me!
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -87,7 +79,7 @@ export default function Navigation() {
           </Button>
         </div>
 
-        {/* Mobile Navigation with Animation */}
+        {/* Mobile Navigation */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -98,42 +90,50 @@ export default function Navigation() {
               className="absolute left-0 right-0 top-full bg-background border-t border-border shadow-md z-50 md:hidden"
             >
               <div className="flex flex-col space-y-4 p-4">
-                <button
-                  onClick={() => scrollToTop()}
+                <Link
+                  href="/"
+                  onClick={() => setIsOpen(false)}
                   className="text-left text-foreground hover:text-primary transition-colors"
                 >
                   Home
-                </button>
-                <button
-                  onClick={() => scrollToSection("about")}
+                </Link>
+                <Link
+                  href="/#about"
+                  onClick={() => setIsOpen(false)}
                   className="text-left text-foreground hover:text-primary transition-colors"
                 >
                   About
-                </button>
-                <button
-                  onClick={() => scrollToSection("services")}
+                </Link>
+                <Link
+                  href="/#services"
+                  onClick={() => setIsOpen(false)}
                   className="text-left text-foreground hover:text-primary transition-colors"
                 >
                   Services
-                </button>
-                <button
-                  onClick={() => scrollToSection("projects")}
+                </Link>
+                <Link
+                  href="/#projects"
+                  onClick={() => setIsOpen(false)}
                   className="text-left text-foreground hover:text-primary transition-colors"
                 >
                   Projects
-                </button>
-                <button
-                  onClick={() => scrollToSection("faqs")}
+                </Link>
+                <Link
+                  href="/#faqs"
+                  onClick={() => setIsOpen(false)}
                   className="text-left text-foreground hover:text-primary transition-colors"
                 >
                   Faqs
-                </button>
-                <Button
-                  onClick={() => scrollToSection("contact")}
-                  className="bg-primary hover:bg-primary/90 w-full"
+                </Link>
+                <Link
+                  href="/#contact"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full"
                 >
-                  Contact Mo
-                </Button>
+                  <Button className="bg-primary hover:bg-primary/90 w-full">
+                    Contact Mo
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           )}
