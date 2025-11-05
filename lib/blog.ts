@@ -1,8 +1,9 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+// lib/blog.ts
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
-const postsDirectory = path.join(process.cwd(), "content/blog");
+const postsDirectory = path.join(process.cwd(), 'content/blog');
 
 export interface BlogPostFrontmatter {
   title: string;
@@ -21,6 +22,12 @@ export interface BlogPost {
   content: string;
 }
 
+export interface Heading {
+  id: string;
+  text: string;
+  level: number;
+}
+
 // Calculate reading time (average 200 words per minute)
 function calculateReadingTime(content: string): number {
   const wordsPerMinute = 200;
@@ -33,11 +40,11 @@ export async function getAllBlogSlugs(): Promise<string[]> {
   if (!fs.existsSync(postsDirectory)) {
     return [];
   }
-
+  
   const fileNames = fs.readdirSync(postsDirectory);
   return fileNames
-    .filter((fileName) => fileName.endsWith(".md") || fileName.endsWith(".mdx"))
-    .map((fileName) => fileName.replace(/\.(md|mdx)$/, ""));
+    .filter((fileName) => fileName.endsWith('.md') || fileName.endsWith('.mdx'))
+    .map((fileName) => fileName.replace(/\.(md|mdx)$/, ''));
 }
 
 // Get a single blog post by slug
@@ -45,7 +52,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
   try {
     const mdPath = path.join(postsDirectory, `${slug}.md`);
     const mdxPath = path.join(postsDirectory, `${slug}.mdx`);
-
+    
     let fullPath: string;
     if (fs.existsSync(mdPath)) {
       fullPath = mdPath;
@@ -55,7 +62,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
       return null;
     }
 
-    const fileContents = fs.readFileSync(fullPath, "utf8");
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
 
     // Calculate reading time if not provided
@@ -78,7 +85,9 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
 // Get all blog posts sorted by date
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
   const slugs = await getAllBlogSlugs();
-  const posts = await Promise.all(slugs.map((slug) => getBlogPost(slug)));
+  const posts = await Promise.all(
+    slugs.map((slug) => getBlogPost(slug))
+  );
 
   return posts
     .filter((post): post is BlogPost => post !== null)
@@ -101,10 +110,31 @@ export async function getBlogPostsByTag(tag: string): Promise<BlogPost[]> {
 export async function getAllTags(): Promise<string[]> {
   const posts = await getAllBlogPosts();
   const tagsSet = new Set<string>();
-
+  
   posts.forEach((post) => {
     post.frontmatter.tags?.forEach((tag) => tagsSet.add(tag));
   });
-
+  
   return Array.from(tagsSet).sort();
+}
+
+// Extract headings from markdown content for Table of Contents
+export function extractHeadings(markdown: string): Heading[] {
+  const headingRegex = /^(#{2,4})\s+(.+)$/gm;
+  const headings: Heading[] = [];
+  let match;
+
+  while ((match = headingRegex.exec(markdown)) !== null) {
+    const level = match[1].length;
+    const text = match[2].trim();
+    const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    
+    headings.push({
+      id,
+      text,
+      level,
+    });
+  }
+
+  return headings;
 }
