@@ -68,7 +68,7 @@ export default function Navigation() {
               onClick={() => scrollToSection("contact")}
               className="bg-primary hover:bg-primary/90"
             >
-              Contact Mo
+              Hire Me!
             </Button>
           </div>
 
