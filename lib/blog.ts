@@ -11,7 +11,7 @@ export interface BlogPostFrontmatter {
   date: string;
   updated?: string;
   author?: string;
-  tags?: string[];
+  tags: string[];
   image?: string;
   readingTime?: number;
 }
