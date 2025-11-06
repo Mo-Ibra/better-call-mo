@@ -126,7 +126,7 @@ export default function Hero() {
             {/* Main Tagline */}
             <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-balance">
               <span className="text-foreground">Better Call</span>{" "}
-              <span className="text-primary neon-glow">Mo!</span>
+              <span className="text-primary md:rounded-2xl md:shadow-[0_0_20px_rgba(16,185,129,0.3)]">Mo!</span>
             </h1>
 
             {/* Subtitle */}
