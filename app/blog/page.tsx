@@ -106,7 +106,7 @@ export default async function BlogPage() {
                     </div>
                   )}
                   <div className="p-6">
-                    <h2 className="text-2xl font-bold mb-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <h2 className="text-2xl font-bold mb-2 hover:text-primary/70 transition-colors">
                       {post.frontmatter.title}
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -133,7 +133,7 @@ export default async function BlogPage() {
                           {post.frontmatter.tags.map((tag) => (
                             <span
                               key={tag}
-                              className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-xs"
+                              className="px-2 py-1 bg-primary/30 text-white rounded text-xs"
                             >
                               {tag}
                             </span>

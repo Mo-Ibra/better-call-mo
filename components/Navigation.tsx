@@ -53,6 +53,12 @@ export default function Navigation() {
             >
               Faqs
             </Link>
+            <Link
+              href="/blog"
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Blog
+            </Link>
           </div>
 
           {/* Hire Me button */}
@@ -120,6 +126,13 @@ export default function Navigation() {
                 </Link>
                 <Link
                   href="/#faqs"
+                  onClick={() => setIsOpen(false)}
+                  className="text-left text-foreground hover:text-primary transition-colors"
+                >
+                  Faqs
+                </Link>
+                <Link
+                  href="/blog"
                   onClick={() => setIsOpen(false)}
                   className="text-left text-foreground hover:text-primary transition-colors"
                 >
