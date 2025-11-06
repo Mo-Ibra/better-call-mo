@@ -33,18 +33,32 @@ export default function ClientArticle({ post }: { post: BlogPost }) {
         </h2>
       );
     },
-    h3: ({ children, ...props }) => (
-      <h3
-        className="text-xl sm:text-2xl font-bold mt-5 mb-2 scroll-mt-20 break-words"
-        {...props}
-      />
-    ),
-    h4: ({ children, ...props }) => (
-      <h4
-        className="text-lg sm:text-xl font-bold mt-4 mb-2 scroll-mt-20 break-words"
-        {...props}
-      />
-    ),
+    h3: ({ children, ...props }) => {
+      const text = String(children);
+      const id = text.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+      return (
+        <h3
+          id={id}
+          className="text-xl sm:text-2xl font-bold mt-5 mb-2 scroll-mt-20 break-words"
+          {...props}
+        >
+          {children}
+        </h3>
+      );
+    },
+    h4: ({ children, ...props }) => {
+      const text = String(children);
+      const id = text.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+      return (
+        <h4
+          id={id}
+          className="text-lg sm:text-xl font-bold mt-4 mb-2 scroll-mt-20 break-words"
+          {...props}
+        >
+          {children}
+        </h4>
+      );
+    },
     p: (props) => (
       <p
         className="text-gray-300 leading-relaxed mb-4 text-base sm:text-lg break-words"
@@ -64,10 +78,16 @@ export default function ClientArticle({ post }: { post: BlogPost }) {
     ),
     em: (props) => <em className="italic text-gray-200" {...props} />,
     ul: (props) => (
-      <ul className="list-disc pl-5 sm:pl-6 my-4 space-y-2 break-words" {...props} />
+      <ul
+        className="list-disc pl-5 sm:pl-6 my-4 space-y-2 break-words"
+        {...props}
+      />
     ),
     ol: (props) => (
-      <ol className="list-decimal pl-5 sm:pl-6 my-4 space-y-2 break-words" {...props} />
+      <ol
+        className="list-decimal pl-5 sm:pl-6 my-4 space-y-2 break-words"
+        {...props}
+      />
     ),
     li: (props) => (
       <li className="text-gray-300 leading-relaxed break-words" {...props} />
