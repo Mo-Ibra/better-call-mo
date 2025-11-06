@@ -91,11 +91,11 @@ export default async function BlogPage() {
             {posts.map((post) => (
               <article
                 key={post.slug}
-                className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+                className="border border-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
               >
                 <Link href={`/blog/${post.slug}`}>
                   {post.frontmatter.image && (
-                    <div className="aspect-video bg-gray-200 dark:bg-gray-800">
+                    <div className="aspect-video bg-gray-800">
                       <Image
                         src={post.frontmatter.image}
                         alt={post.frontmatter.title}
