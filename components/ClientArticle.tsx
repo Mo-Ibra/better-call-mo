@@ -171,7 +171,7 @@ export default function ClientArticle({ post }: { post: BlogPost }) {
   };
 
   return (
-    <article className="w-full max-w-[95%] sm:max-w-4xl md:max-w-5xl mx-auto overflow-x-hidden px-2 sm:px-0">
+    <article className="w-full max-w-[95%] sm:max-w-4xl md:max-w-5xl mx-auto overflow-x-hidden px-2 md:px-12">
       <header className="mb-8">
         <h1 className="text-3xl sm:text-5xl font-bold mb-4 break-words">
           {post.frontmatter.title}

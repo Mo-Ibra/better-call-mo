@@ -26,36 +26,42 @@ export default function Navigation() {
             <Link
               href="/#home"
               className="text-foreground hover:text-primary transition-colors"
+              title="home"
             >
               Home
             </Link>
             <Link
               href="/#about"
               className="text-foreground hover:text-primary transition-colors"
+              title="about"
             >
               About
             </Link>
             <Link
               href="/#services"
               className="text-foreground hover:text-primary transition-colors"
+              title="services"
             >
               Services
             </Link>
             <Link
               href="/#projects"
               className="text-foreground hover:text-primary transition-colors"
+              title="projects"
             >
               Projects
             </Link>
             <Link
               href="/#faqs"
               className="text-foreground hover:text-primary transition-colors"
+              title="faqs"
             >
               Faqs
             </Link>
             <Link
               href="/blog"
               className="text-foreground hover:text-primary transition-colors"
+              title="blog"
             >
               Blog
             </Link>
@@ -63,7 +69,7 @@ export default function Navigation() {
 
           {/* Hire Me button */}
           <div className="hidden md:block">
-            <Link href="#contact">
+            <Link href="#contact" title="contact">
               <Button className="bg-primary hover:bg-primary/90">
                 Hire Me!
               </Button>
@@ -100,6 +106,7 @@ export default function Navigation() {
                   href="/"
                   onClick={() => setIsOpen(false)}
                   className="text-left text-foreground hover:text-primary transition-colors"
+                  title="home"
                 >
                   Home
                 </Link>
@@ -107,6 +114,7 @@ export default function Navigation() {
                   href="/#about"
                   onClick={() => setIsOpen(false)}
                   className="text-left text-foreground hover:text-primary transition-colors"
+                  title="about"
                 >
                   About
                 </Link>
@@ -114,6 +122,7 @@ export default function Navigation() {
                   href="/#services"
                   onClick={() => setIsOpen(false)}
                   className="text-left text-foreground hover:text-primary transition-colors"
+                  title="services"
                 >
                   Services
                 </Link>
@@ -121,6 +130,7 @@ export default function Navigation() {
                   href="/#projects"
                   onClick={() => setIsOpen(false)}
                   className="text-left text-foreground hover:text-primary transition-colors"
+                  title="projects"
                 >
                   Projects
                 </Link>
@@ -128,6 +138,7 @@ export default function Navigation() {
                   href="/#faqs"
                   onClick={() => setIsOpen(false)}
                   className="text-left text-foreground hover:text-primary transition-colors"
+                  title="faqs"
                 >
                   Faqs
                 </Link>
@@ -135,6 +146,7 @@ export default function Navigation() {
                   href="/blog"
                   onClick={() => setIsOpen(false)}
                   className="text-left text-foreground hover:text-primary transition-colors"
+                  title="blog"
                 >
                   Blog
                 </Link>
@@ -142,6 +154,7 @@ export default function Navigation() {
                   href="/#contact"
                   onClick={() => setIsOpen(false)}
                   className="w-full"
+                  title="contact"
                 >
                   <Button className="bg-primary hover:bg-primary/90 w-full">
                     Contact Mo

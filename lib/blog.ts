@@ -12,6 +12,7 @@ export interface BlogPostFrontmatter {
   updated?: string;
   author?: string;
   tags: string[];
+  keywords?: string[];
   image?: string;
   readingTime?: number;
 }

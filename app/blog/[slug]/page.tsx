@@ -37,7 +37,7 @@ export async function generateMetadata({
   return {
     title: `${post.frontmatter.title} | Better Call Mo`,
     description: post.frontmatter.description,
-    keywords: post.frontmatter.tags?.join(", "),
+    keywords: post.frontmatter.keywords?.join(", "),
     authors: [{ name: post.frontmatter.author || "Mo Ibra" }],
     openGraph: {
       title: post.frontmatter.title,
@@ -118,7 +118,8 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
       <Navigation />
       <div className="relative max-w-5xl mx-auto px-4 py-12">
         <div className="relative flex justify-center">
-          <div className="hidden xl:block absolute left-[-25rem] top-0 bottom-6">
+          
+          <div className="hidden xl:block absolute left-[-22rem] top-0 bottom-6">
             <div className="sticky top-24">
               <SideAd />
             </div>
@@ -126,7 +127,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
 
           <ClientArticle post={post} />
 
-          <div className="hidden xl:block absolute right-[-18rem] top-0 bottom-6">
+          <div className="hidden xl:block absolute right-[-22rem] top-0 bottom-6">
             <div className="sticky top-24">
               <TableOfContents headings={headings} />
             </div>

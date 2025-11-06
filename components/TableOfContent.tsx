@@ -1,7 +1,6 @@
 import { Heading } from "@/lib/blog";
 
 export default function TableOfContents({ headings }: { headings: Heading[] }) {
-
   if (headings.length === 0) return null;
 
   return (
@@ -17,11 +16,13 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
           >
             <a
               href={`#${heading.id}`}
-              className={`block text-gray-400 hover:hover:text-blue-400 transition-colors ${
+              title={heading.id.replaceAll("-", " ")}
+              className={`block text-gray-400 hover:text-blue-400 transition-colors ${
                 heading.level === 2 ? "font-semibold" : ""
               }`}
             >
-              {heading.text}
+              {heading.text.split(" ").slice(0, 4).join(" ") +
+                (heading.text.split(" ").length > 4 ? "..." : "")}
             </a>
           </li>
         ))}

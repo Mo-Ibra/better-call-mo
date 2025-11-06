@@ -130,6 +130,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Fix Blog Issue */
+
+blockquote p {
+  margin-bottom: 0;
+}
+
 /* Added custom styles for Better Call Saul inspired elements */
 .hero-title {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
