@@ -22,12 +22,14 @@ keywords:
     "restaurant website ideas",
   ]
 tags: ["Restaurant", "Small Business", "Websites", "Business"]
-image: "/blog/nextjs-tutorial.jpg"
+image: "/images/blog/why-does-every-restaurant-need-a-website.jpg"
 ---
 
 ## Why Every Restaurant Without a Website Is Handing Customers to Competitors
 
 I’ve built websites for restaurants for years — from cozy local cafés to modern fine-dining spots — and I’ve seen one truth repeat itself over and over again:
+
+![Restaurant Website](/images/blog/why-does-every-restaurant-need-a-website.jpg)
 
 > Restaurants without a website are quietly losing customers every single day.
 

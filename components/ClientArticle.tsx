@@ -100,12 +100,10 @@ export default function ClientArticle({ post }: { post: BlogPost }) {
     ),
     hr: (props) => <hr className="border-gray-700 my-8" {...props} />,
     img: (props) => (
-      <div className="my-6">
         <img
           className="rounded-lg shadow-lg w-full h-auto max-h-[500px] object-contain"
           {...props}
         />
-      </div>
     ),
     table: (props) => (
       <div className="overflow-x-auto my-6 w-full">
