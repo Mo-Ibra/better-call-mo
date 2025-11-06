@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAllBlogPosts } from "@/lib/blog";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Blog | Better Call Mo",
@@ -13,6 +14,14 @@ export const metadata: Metadata = {
     url: "https://bettercallmo.dev/blog",
     siteName: "Better Call Mo",
     type: "website",
+    images: [
+      {
+        url: "https://bettercallmo.dev/og-blog.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Better Call Mo - Blog",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -41,9 +50,18 @@ export default async function BlogPage() {
     blogPost: posts.map((post) => ({
       "@type": "BlogPosting",
       headline: post.frontmatter.title,
+      author: {
+        "@type": "Person",
+        name: "Mo Ibra",
+      },
       description: post.frontmatter.description,
       datePublished: post.frontmatter.date,
+      dateModified: post.frontmatter.date,
       url: `https://bettercallmo.dev/blog/${post.slug}`,
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `https://bettercallmo.dev/blog/${post.slug}`,
+      },
     })),
   };
 
@@ -53,7 +71,7 @@ export default async function BlogPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      
+
       <Navigation />
 
       <div className="max-w-6xl mx-auto px-4 py-12">
@@ -78,10 +96,12 @@ export default async function BlogPage() {
                 <Link href={`/blog/${post.slug}`}>
                   {post.frontmatter.image && (
                     <div className="aspect-video bg-gray-200 dark:bg-gray-800">
-                      <img
+                      <Image
                         src={post.frontmatter.image}
                         alt={post.frontmatter.title}
                         className="w-full h-full object-cover"
+                        width={320}
+                        height={320}
                       />
                     </div>
                   )}

@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/api/',
     },
-    sitemap: 'https://bettercallmo.com/sitemap.xml',
+    sitemap: 'https://bettercallmo.dev/sitemap.xml',
   };
 }
