@@ -9,8 +9,8 @@ export default function About() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-              Meet Mo - Your Web Development{" "}
-              <span className="text-primary">{"Attorney"}</span>
+              Meet Mo - Your Web{" "}
+              <span className="text-primary">{"Developer"}</span>
             </h2>
             <p className="text-xl text-muted-foreground text-balance">
               {
@@ -34,7 +34,7 @@ export default function About() {
               <Card className="border-primary/20">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <User className="w-6 h-6 text-primary mt-1" />
+                    <User className="w-32 h-32 text-primary mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
                         The Developer You Need
@@ -52,7 +52,7 @@ export default function About() {
               <Card className="border-primary/20">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <Coffee className="w-6 h-6 text-primary mt-1" />
+                    <Coffee className="w-32 h-32 text-primary mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
                         Always Available
@@ -70,7 +70,7 @@ export default function About() {
               <Card className="border-primary/20">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <Lightbulb className="w-6 h-6 text-primary mt-1" />
+                    <Lightbulb className="w-32 h-32 text-primary mt-1" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">
                         Creative Solutions
@@ -88,43 +88,82 @@ export default function About() {
           </div>
 
           <div className="mt-16 text-center">
-            <h3 className="text-2xl font-semibold mb-6">Our Stack</h3>
+            <h3 className="text-2xl font-semibold mb-6">Technologies I use</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-4xl mx-auto">
               {[
-                { name: "Next.js", image: "/images/next-js-logo-black-and-white.jpg" },
-                { name: "React", image: "/images/placeholder-gw3oa.png" },
+                {
+                  name: "Next.js",
+                  image: "/images/logos/nextjs.png",
+                },
+                {
+                  name: "React.js",
+                  image: "/images/logos/react.png",
+                },
                 {
                   name: "TypeScript",
-                  image: "/images/typescript-logo-blue-ts-letters.jpg",
+                  image: "/images/logos/typescript.png",
                 },
                 {
                   name: "Tailwind CSS",
-                  image: "/images/tailwind-css-logo-blue-wind-icon.jpg",
+                  image: "/images/logos/tailwind.png",
                 },
                 {
                   name: "ShadCN/UI",
-                  image: "/images/shadcn-ui-logo-modern-component-library-icon.jpg",
+                  image: "/images/logos/shadcn-ui.png",
                 },
-                { name: "Node.js", image: "/images/node-js-logo-green-hexagon.jpg" },
+                {
+                  name: "Node.js",
+                  image: "/images/logos/node.png",
+                },
                 {
                   name: "PostgreSQL",
-                  image: "/images/postgresql-logo-blue-elephant.jpg",
+                  image: "/images/logos/postgresql.png",
                 },
-                { name: "MongoDB", image: "/images/mongodb-logo-green-leaf.jpg" },
-                { name: "Vercel", image: "/images/vercel-logo-black-triangle.jpg" },
-                { name: "Git", image: "/images/git-logo-orange-branching-symbol.jpg" },
+                {
+                  name: "Express",
+                  image: "/images/logos/express.webp",
+                },
+                {
+                  name: "Python",
+                  image: "/images/logos/python.png",
+                },
+                {
+                  name: "WordPress",
+                  image: "/images/logos/wordpress.png",
+                },
+                {
+                  name: "Shopify",
+                  image: "/images/logos/shopify.png",
+                },
+                {
+                  name: "Figma",
+                  image: "/images/logos/figma.png",
+                },
+                {
+                  name: "Notion",
+                  image: "/images/logos/notion.png",
+                },
+                {
+                  name: "Vercel",
+                  image: "/images/logos/vercel.png",
+                },
+                {
+                  name: "Git",
+                  image: "/images/logos/git.png",
+                },
               ].map((tech) => (
                 <div
                   key={tech.name}
                   className="group flex flex-col items-center p-4 rounded-lg border border-primary/20 bg-card/50 hover:bg-card hover:border-primary/40 transition-all duration-300 hover:scale-105"
                 >
-                  <div className="w-12 h-12 mb-3 rounded-lg overflow-hidden bg-background/50 flex items-center justify-center group-hover:shadow-lg group-hover:shadow-primary/20 transition-all duration-300">
+                  <div className="w-12 h-12 mb-3 rounded-lg overflow-hidden flex items-center justify-center transition-all duration-300">
                     <Image
                       src={tech.image || "/placeholder.svg"}
                       alt={`${tech.name} logo`}
-                      width={10}
-                      height={10}
+                      width={220}
+                      height={220}
                       className="w-10 h-10 object-contain"
+                      quality={100}
                     />
                   </div>
                   <span className="text-sm font-medium text-center group-hover:text-primary transition-colors duration-300">
