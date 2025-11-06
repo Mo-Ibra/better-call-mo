@@ -31,14 +31,14 @@ export async function generateMetadata({
     };
   }
 
-  const siteUrl = "https://bettercallmo.com"; // Replace with your actual domain
+  const siteUrl = "https://bettercallmo.dev";
   const postUrl = `${siteUrl}/blog/${params.slug}`;
 
   return {
     title: `${post.frontmatter.title} | Better Call Mo`,
     description: post.frontmatter.description,
     keywords: post.frontmatter.tags?.join(", "),
-    authors: [{ name: post.frontmatter.author || "Mo" }],
+    authors: [{ name: post.frontmatter.author || "Mo Ibra" }],
     openGraph: {
       title: post.frontmatter.title,
       description: post.frontmatter.description,
@@ -57,7 +57,7 @@ export async function generateMetadata({
       locale: "en_US",
       type: "article",
       publishedTime: post.frontmatter.date,
-      authors: [post.frontmatter.author || "Mo"],
+      authors: [post.frontmatter.author || "Mo Ibra"],
       tags: post.frontmatter.tags,
     },
     twitter: {
@@ -65,7 +65,7 @@ export async function generateMetadata({
       title: post.frontmatter.title,
       description: post.frontmatter.description,
       images: post.frontmatter.image ? [post.frontmatter.image] : [],
-      creator: "@yourtwitterhandle", // Replace with your Twitter handle
+      creator: "@MoIbrraa",
     },
     alternates: {
       canonical: postUrl,
@@ -93,19 +93,19 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
     dateModified: post.frontmatter.updated || post.frontmatter.date,
     author: {
       "@type": "Person",
-      name: post.frontmatter.author || "Mo",
+      name: post.frontmatter.author || "Mo Ibra",
     },
     publisher: {
       "@type": "Organization",
       name: "Better Call Mo",
       logo: {
         "@type": "ImageObject",
-        url: "https://bettercallmo.com/logo.png", // Replace with your logo
+        url: "https://bettercallmo.dev/logo.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://bettercallmo.com/blog/${params.slug}`,
+      "@id": `https://bettercallmo.dev/blog/${params.slug}`,
     },
   };
 

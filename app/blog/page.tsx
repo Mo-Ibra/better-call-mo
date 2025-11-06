@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Blog | Better Call Mo",
     description: "Articles about web development, design, and technology by Mo",
-    url: "https://bettercallmo.com/blog",
+    url: "https://bettercallmo.dev/blog",
     siteName: "Better Call Mo",
     type: "website",
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: "Articles about web development, design, and technology by Mo",
   },
   alternates: {
-    canonical: "https://bettercallmo.com/blog",
+    canonical: "https://bettercallmo.dev/blog",
   },
 };
 
@@ -33,17 +33,17 @@ export default async function BlogPage() {
     "@type": "Blog",
     name: "Better Call Mo Blog",
     description: "Articles about web development, design, and technology",
-    url: "https://bettercallmo.com/blog",
+    url: "https://bettercallmo.dev/blog",
     author: {
       "@type": "Person",
-      name: "Mo",
+      name: "Mo Ibra",
     },
     blogPost: posts.map((post) => ({
       "@type": "BlogPosting",
       headline: post.frontmatter.title,
       description: post.frontmatter.description,
       datePublished: post.frontmatter.date,
-      url: `https://bettercallmo.com/blog/${post.slug}`,
+      url: `https://bettercallmo.dev/blog/${post.slug}`,
     })),
   };
 
