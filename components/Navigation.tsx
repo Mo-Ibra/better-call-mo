@@ -136,7 +136,7 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                   className="text-left text-foreground hover:text-primary transition-colors"
                 >
-                  Faqs
+                  Blog
                 </Link>
                 <Link
                   href="/#contact"
