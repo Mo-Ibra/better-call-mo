@@ -77,13 +77,13 @@ export default async function BlogPage() {
       <div className="max-w-6xl mx-auto px-4 py-12">
         <header className="mb-12">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Blog</h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400">
+          <p className="text-xl text-gray-400">
             Thoughts on web development, design, and technology
           </p>
         </header>
 
         {posts.length === 0 ? (
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-gray-400">
             No blog posts yet. Check back soon!
           </p>
         ) : (
@@ -109,10 +109,10 @@ export default async function BlogPage() {
                     <h2 className="text-2xl font-bold mb-2 hover:text-primary/70 transition-colors">
                       {post.frontmatter.title}
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
+                    <p className="text-gray-400 mb-4">
                       {post.frontmatter.description}
                     </p>
-                    <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-500">
+                    <div className="flex items-center gap-4 text-sm text-gray-500">
                       <time dateTime={post.frontmatter.date}>
                         {new Date(post.frontmatter.date).toLocaleDateString(
                           "en-US",

@@ -48,7 +48,7 @@ my-app/
 
 ## Key Best Practices
 
-### 1. Use TypeScript
+### Use TypeScript
 
 TypeScript helps catch errors early and improves developer experience:
 
@@ -65,7 +65,7 @@ async function getBlogPosts(): Promise<BlogPost[]> {
 }
 ```
 
-### 2. Optimize Images
+### Optimize Images
 
 Always use Next.js Image component for automatic optimization:
 
@@ -75,7 +75,7 @@ import Image from "next/image";
 <Image src="/hero.jpg" alt="Hero image" width={1200} height={600} priority />;
 ```
 
-### 3. Implement Proper SEO
+### Implement Proper SEO
 
 Use the Metadata API for great SEO:
 
