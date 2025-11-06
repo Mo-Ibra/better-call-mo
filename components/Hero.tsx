@@ -135,7 +135,7 @@ export default function Hero() {
             </p>
 
             {/* Social Proof Stats */}
-            <div className="mb-12">
+            <div className="md:mb-12 mb-5">
               <div className="grid grid-cols-2 gap-4 mb-8">
                 <div className="bg-card/90 backdrop-blur-sm p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20">
                   <div className="flex items-center gap-3 mb-2">
@@ -185,6 +185,12 @@ export default function Hero() {
                   <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                   <span className="text-muted-foreground">
                     Fast delivery - Most projects completed in 2-4 weeks
+                  </span>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span className="text-muted-foreground">
+                    Affordable - only get paid when you see something alive.
                   </span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
