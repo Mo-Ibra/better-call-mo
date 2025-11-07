@@ -379,8 +379,8 @@ export default function Projects() {
                   View Live Project
                 </Button>
                 <Button
-                  variant="outline"
-                  className="flex-1"
+                  variant="default"
+                  className="flex-1 bg-slate-800 hover:bg-slate-900"
                   onClick={() => window.open(selectedProject.githubUrl, "_blank")}
                 >
                   <Github className="w-4 h-4 mr-2" />
