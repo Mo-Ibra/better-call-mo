@@ -48,8 +48,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [{ url: "/favicon.ico", sizes: "16x16", type: "image/x-icon" }],
     apple: "/apple-touch-icon.png",
+    shortcut: "/favicon.ico",
   },
   manifest: "/manifest.webmanifest",
   twitter: {
