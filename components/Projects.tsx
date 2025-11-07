@@ -44,7 +44,7 @@ const projects: Project[] = [
     role: "Full Stack Developer",
     gallery: [
       "/images/modern-ecommerce-dark.png",
-      "/images/modern-ecommerce-dark.png",
+      "/images/analytics-dashboard-dark-theme-green-accents.jpg",
       "/images/modern-ecommerce-dark.png"
     ]
   },
@@ -253,7 +253,7 @@ export default function Projects() {
 
       {/* Project Modal */}
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-        <DialogContent className="max-w-6xl max-h-[95vh] overflow-y-auto p-0">
+        <DialogContent className="max-w-6xl max-h-[95vh] overflow-y-auto p-0 custom-scrollbar">
           {selectedProject && (
             <div className="p-6 md:p-8 space-y-6">
               <DialogHeader>
