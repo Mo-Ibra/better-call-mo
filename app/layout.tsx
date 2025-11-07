@@ -49,7 +49,6 @@ export const metadata: Metadata = {
   },
   icons: {
     apple: "/apple-touch-icon.png",
-    shortcut: "/favicon.ico",
   },
   manifest: "/manifest.webmanifest",
   twitter: {
