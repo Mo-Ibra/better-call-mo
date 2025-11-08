@@ -186,10 +186,10 @@ export default async function TranslatedBlogPage({
                     </div>
                   )}
                   <div className="p-6">
-                    <h2 className="text-2xl font-bold mb-2 hover:text-primary/70 transition-colors">
+                    <h2 className="text-2xl font-bold mb-2 hover:text-primary/70 transition-colors line-clamp-2 overflow-hidden text-ellipsis">
                       {post.frontmatter.title}
                     </h2>
-                    <p className="text-gray-400 mb-4">
+                    <p className="text-gray-400 mb-4 line-clamp-3 overflow-hidden text-ellipsis">
                       {post.frontmatter.description}
                     </p>
                     <div className="flex items-center gap-4 text-sm text-gray-500">
