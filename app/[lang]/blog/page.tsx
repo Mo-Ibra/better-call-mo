@@ -165,10 +165,10 @@ export default async function TranslatedBlogPage({
 
       <div className="max-w-6xl mx-auto px-4 py-12" dir={langConfig.dir}>
         <header className="mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            {headings[lang]}
-          </h1>
-          <LanguageSwitcher currentLang={lang as LanguageCode} />
+          <div className="flex items-start justify-between gap-4 mb-4">
+            <h1 className="text-4xl md:text-6xl font-bold">Blog</h1>
+            <LanguageSwitcher currentLang={lang as LanguageCode} />
+          </div>
           <p className="text-xl text-gray-400">{subheadings[lang]}</p>
         </header>
 
