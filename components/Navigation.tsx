@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,8 @@ export default function Navigation() {
             href="/"
             className="text-2xl font-bold text-primary cursor-pointer"
           >
-            {"<Mo />"}
+            {/* {"<Mo />"} */}
+            <Image src="/favicon.svg" width={36} height={36} alt="logo" />
           </Link>
 
           {/* Desktop Navigation */}
