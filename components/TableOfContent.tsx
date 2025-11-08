@@ -21,8 +21,8 @@ export default function TableOfContents({ headings }: { headings: Heading[] }) {
                 heading.level === 2 ? "font-semibold" : ""
               }`}
             >
-              {heading.text.split(" ").slice(0, 4).join(" ") +
-                (heading.text.split(" ").length > 4 ? "..." : "")}
+              {heading.text.split(" ").slice(0, 7).join(" ") +
+                (heading.text.split(" ").length > 7 ? "..." : "")}
             </a>
           </li>
         ))}

@@ -116,21 +116,23 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Navigation />
-      <div className="relative max-w-5xl mx-auto px-4 py-12">
-        <div className="relative flex justify-center">
-          
-          <div className="hidden xl:block absolute left-[-22rem] top-0 bottom-6">
-            <div className="sticky top-24">
-              <SideAd />
-            </div>
+      <div className="max-w-[1650px] mx-auto px-4 py-12 grid grid-cols-1 xl:grid-cols-[300px_minmax(0,800px)_300px] gap-12">
+        {/* Left Ad */}
+        <div className="hidden xl:block">
+          <div className="sticky top-24">
+            <SideAd />
           </div>
+        </div>
 
+        {/* Main Article */}
+        <div>
           <ClientArticle post={post} />
+        </div>
 
-          <div className="hidden xl:block absolute right-[-22rem] top-0 bottom-6">
-            <div className="sticky top-24">
-              <TableOfContents headings={headings} />
-            </div>
+        {/* Table of Contents */}
+        <div className="hidden xl:block">
+          <div className="sticky top-24">
+            <TableOfContents headings={headings} />
           </div>
         </div>
       </div>
