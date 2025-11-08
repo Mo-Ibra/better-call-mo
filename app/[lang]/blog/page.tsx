@@ -34,7 +34,6 @@ export async function generateMetadata({
     return { title: "Not Found" };
   }
 
-  const langConfig = getLanguageConfig(lang);
   const siteUrl = "https://bettercallmo.dev";
   const blogUrl = `${siteUrl}/${lang}/blog`;
 
@@ -101,13 +100,6 @@ export default async function TranslatedBlogPage({
 
   const posts = await getAllBlogPosts(lang as LanguageCode);
   const langConfig = getLanguageConfig(lang);
-
-  const headings: Record<string, string> = {
-    es: "Blog",
-    it: "Blog",
-    de: "Blog",
-    pt: "Blog",
-  };
 
   const subheadings: Record<string, string> = {
     es: "Reflexiones sobre desarrollo web, diseño y tecnología",
