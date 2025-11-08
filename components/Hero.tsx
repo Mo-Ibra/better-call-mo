@@ -81,18 +81,9 @@ function ParticleBackground() {
 }
 
 function MainRandomImage() {
-  const images = [
-    // "/images/saul-1.png",
-    "/images/saul-2.png",
-    "/images/saul-3.webp",
-  ];
-
-  const randomIndex = Math.floor(Math.random() * images.length);
-  const randomImage = images[randomIndex];
-
   return (
     <Image
-      src={randomImage}
+      src="/images/saul-3.webp"
       alt="Better Call Mo - Professional Web Developer"
       width={1000}
       height={1000}
