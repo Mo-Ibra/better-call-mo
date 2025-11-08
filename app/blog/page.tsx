@@ -4,6 +4,7 @@ import { getAllBlogPosts } from "@/lib/blog";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export const metadata: Metadata = {
   title: "Blog | Better Call Mo",
@@ -77,6 +78,7 @@ export default async function BlogPage() {
       <div className="max-w-6xl mx-auto px-4 py-12">
         <header className="mb-12">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Blog</h1>
+          <LanguageSwitcher currentLang="en" />
           <p className="text-xl text-gray-400">
             Thoughts on web development, design, and technology
           </p>

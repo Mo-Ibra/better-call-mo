@@ -2,6 +2,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { LanguageCode, defaultLanguage } from './i18n.config';
 
 const postsDirectory = path.join(process.cwd(), 'content/blog');
 
@@ -21,6 +22,7 @@ export interface BlogPost {
   slug: string;
   frontmatter: BlogPostFrontmatter;
   content: string;
+  lang: LanguageCode;
 }
 
 export interface Heading {
@@ -36,23 +38,37 @@ function calculateReadingTime(content: string): number {
   return Math.ceil(words / wordsPerMinute);
 }
 
-// Get all blog post slugs
-export async function getAllBlogSlugs(): Promise<string[]> {
-  if (!fs.existsSync(postsDirectory)) {
+// Get directory path for a specific language
+function getPostsDirectoryForLang(lang: LanguageCode = defaultLanguage): string {
+  if (lang === defaultLanguage) {
+    return postsDirectory;
+  }
+  return path.join(postsDirectory, lang);
+}
+
+// Get all blog post slugs for a specific language
+export async function getAllBlogSlugs(lang: LanguageCode = defaultLanguage): Promise<string[]> {
+  const directory = getPostsDirectoryForLang(lang);
+  
+  if (!fs.existsSync(directory)) {
     return [];
   }
   
-  const fileNames = fs.readdirSync(postsDirectory);
+  const fileNames = fs.readdirSync(directory);
   return fileNames
     .filter((fileName) => fileName.endsWith('.md') || fileName.endsWith('.mdx'))
     .map((fileName) => fileName.replace(/\.(md|mdx)$/, ''));
 }
 
-// Get a single blog post by slug
-export async function getBlogPost(slug: string): Promise<BlogPost | null> {
+// Get a single blog post by slug and language
+export async function getBlogPost(
+  slug: string,
+  lang: LanguageCode = defaultLanguage
+): Promise<BlogPost | null> {
   try {
-    const mdPath = path.join(postsDirectory, `${slug}.md`);
-    const mdxPath = path.join(postsDirectory, `${slug}.mdx`);
+    const directory = getPostsDirectoryForLang(lang);
+    const mdPath = path.join(directory, `${slug}.md`);
+    const mdxPath = path.join(directory, `${slug}.mdx`);
     
     let fullPath: string;
     if (fs.existsSync(mdPath)) {
@@ -76,18 +92,19 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
         readingTime,
       } as BlogPostFrontmatter,
       content,
+      lang,
     };
   } catch (error) {
-    console.error(`Error reading blog post ${slug}:`, error);
+    console.error(`Error reading blog post ${slug} (${lang}):`, error);
     return null;
   }
 }
 
-// Get all blog posts sorted by date
-export async function getAllBlogPosts(): Promise<BlogPost[]> {
-  const slugs = await getAllBlogSlugs();
+// Get all blog posts sorted by date for a specific language
+export async function getAllBlogPosts(lang: LanguageCode = defaultLanguage): Promise<BlogPost[]> {
+  const slugs = await getAllBlogSlugs(lang);
   const posts = await Promise.all(
-    slugs.map((slug) => getBlogPost(slug))
+    slugs.map((slug) => getBlogPost(slug, lang))
   );
 
   return posts
@@ -99,17 +116,20 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
     });
 }
 
-// Get posts by tag
-export async function getBlogPostsByTag(tag: string): Promise<BlogPost[]> {
-  const allPosts = await getAllBlogPosts();
+// Get posts by tag for a specific language
+export async function getBlogPostsByTag(
+  tag: string,
+  lang: LanguageCode = defaultLanguage
+): Promise<BlogPost[]> {
+  const allPosts = await getAllBlogPosts(lang);
   return allPosts.filter((post) =>
     post.frontmatter.tags?.some((t) => t.toLowerCase() === tag.toLowerCase())
   );
 }
 
-// Get all unique tags
-export async function getAllTags(): Promise<string[]> {
-  const posts = await getAllBlogPosts();
+// Get all unique tags for a specific language
+export async function getAllTags(lang: LanguageCode = defaultLanguage): Promise<string[]> {
+  const posts = await getAllBlogPosts(lang);
   const tagsSet = new Set<string>();
   
   posts.forEach((post) => {
@@ -117,6 +137,21 @@ export async function getAllTags(): Promise<string[]> {
   });
   
   return Array.from(tagsSet).sort();
+}
+
+// Check if a post has translations
+export async function getAvailableTranslations(slug: string): Promise<LanguageCode[]> {
+  const availableLanguages: LanguageCode[] = ['en', 'es', 'it', 'de', 'pt'];
+  const translations: LanguageCode[] = [];
+  
+  for (const lang of availableLanguages) {
+    const post = await getBlogPost(slug, lang);
+    if (post) {
+      translations.push(lang);
+    }
+  }
+  
+  return translations;
 }
 
 // Extract headings from markdown content for Table of Contents
