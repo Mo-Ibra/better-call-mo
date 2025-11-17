@@ -58,8 +58,7 @@ function buildHtmlTemplate({ fullName, company, website }: EmailTemplateData) {
         <div style="background:linear-gradient(135deg, #00bc7c 0%, #00a06d 100%);padding:40px 30px;text-align:center;">
           <img 
             src="${
-              process.env.EMAIL_LOGO_URL ||
-              "https://bettercallmo.dev/logo.png"
+              process.env.EMAIL_LOGO_URL || "https://bettercallmo.dev/logo.png"
             }" 
             alt="Mo Logo" 
             style="width:80px;height:80px;margin:0 auto 20px;border-radius:50%;display:block;box-shadow:0 4px 12px rgba(0,0,0,0.15);"
