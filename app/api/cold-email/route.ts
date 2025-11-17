@@ -34,7 +34,14 @@ export async function POST(req: NextRequest) {
 }
 
 // ===== HTML Template Builder =====
-function buildHtmlTemplate({ fullName, company, website }: any) {
+type EmailTemplateData = {
+  fullName?: string;
+  company?: string;
+  website?: string;
+  email?: string;
+};
+
+function buildHtmlTemplate({ fullName, company, website }: EmailTemplateData) {
   const firstName = fullName ? fullName.split(" ")[0] : "there";
 
   return `
@@ -188,20 +195,13 @@ function buildHtmlTemplate({ fullName, company, website }: any) {
           </p>
         </div>
       </div>
-
-      <!-- Outer Footer -->
-      <div style="max-width:600px;margin:20px auto;text-align:center;">
-        <p style="margin:0;color:#999;font-size:12px;">
-          Sent with care from Mo's Web Development Services
-        </p>
-      </div>
     </body>
   </html>
   `;
 }
 
 // ===== TEXT VERSION (fallback) =====
-function buildTextVersion({ fullName, company, website }: any) {
+function buildTextVersion({ fullName, company, website }: EmailTemplateData) {
   const firstName = fullName ? fullName.split(" ")[0] : "there";
 
   return `Hey ${firstName},
