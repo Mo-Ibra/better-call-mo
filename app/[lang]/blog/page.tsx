@@ -28,7 +28,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: TranslatedBlogPageProps): Promise<Metadata> {
-  const { lang } = params;
+  const { lang } = await params;
 
   if (!availableLanguages.includes(lang as LanguageCode) || lang === "en") {
     return { title: "Not Found" };
@@ -91,7 +91,7 @@ export async function generateMetadata({
 export default async function TranslatedBlogPage({
   params,
 }: TranslatedBlogPageProps) {
-  const { lang } = params;
+  const { lang } = await params;
 
   // Validate language
   if (!availableLanguages.includes(lang as LanguageCode) || lang === "en") {

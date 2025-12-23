@@ -23,7 +23,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: BlogPostPageProps): Promise<Metadata> {
-  const post = await getBlogPost(params.slug);
+
+  const { slug } = await params;
+
+  const post = await getBlogPost(slug);
 
   if (!post) {
     return {
@@ -32,7 +35,7 @@ export async function generateMetadata({
   }
 
   const siteUrl = "https://bettercallmo.dev";
-  const postUrl = `${siteUrl}/blog/${params.slug}`;
+  const postUrl = `${siteUrl}/blog/${slug}`;
 
   return {
     title: `${post.frontmatter.title} | Better Call Mo`,
@@ -74,7 +77,10 @@ export async function generateMetadata({
 }
 
 export default async function BlogPost({ params }: BlogPostPageProps) {
-  const post = await getBlogPost(params.slug);
+
+  const { slug } = await params;
+
+  const post = await getBlogPost(slug);
 
   if (!post) {
     notFound();
@@ -105,7 +111,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://bettercallmo.dev/blog/${params.slug}`,
+      "@id": `https://bettercallmo.dev/blog/${slug}`,
     },
   };
 
