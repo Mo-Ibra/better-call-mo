@@ -73,5 +73,47 @@ export const services: Service[] = [
     techStack: ["Next.js", "Prisma", "PostgreSQL", "Tailwind"],
     ctaText: "Build Your MVP",
     schemaType: "SoftwareApplication"
+  },
+  {
+    slug: "mobile-app-development",
+    title: "Mobile App Development (iOS & Android)",
+    shortDesc: "Build premium mobile experiences using React Native and Flutter for both iOS and Android platforms.",
+    fullDesc: "I help businesses reach their customers on any device. Whether it's a high-performance React Native app or a beautiful Flutter interface, I ensure a smooth, native-like experience with a single codebase.",
+    benefits: [
+      "Cross-platform efficiency with shared code",
+      "Native-level performance and feel",
+      "Faster time-to-market for both stores",
+      "Seamless integration with web backends"
+    ],
+    features: [
+      "Custom UI/UX Design for Mobile",
+      "Push Notifications Integration",
+      "Offline Mode Capability",
+      "App Store & Play Store Deployment"
+    ],
+    techStack: ["React Native", "Flutter", "Firebase", "TypeScript"],
+    ctaText: "Scope Your Mobile App",
+    schemaType: "SoftwareApplication"
+  },
+  {
+    slug: "web-performance-optimization",
+    title: "Web Performance & SEO Speed Optimization",
+    shortDesc: "Turn your slow website into a high-speed conversion machine that satisfies both users and Google.",
+    fullDesc: "A slow website is a business killer. I specialize in deep performance audits and implementations to improve your Core Web Vitals, reduce LCP, and ensure your site is lightning fast across all devices.",
+    benefits: [
+      "Significant reduction in bounce rates",
+      "Higher rankings in Google Search",
+      "Improved user satisfaction and trust",
+      "Increased conversion and sales"
+    ],
+    features: [
+      "Core Web Vitals Optimization",
+      "Advanced Image & Asset Compression",
+      "Code Splitting & Lazy Loading",
+      "Critical CSS & Font Optimization"
+    ],
+    techStack: ["Lighthouse", "WebVitals", "Cloudflare", "Next.js"],
+    ctaText: "Speed Up My Site",
+    schemaType: "Service"
   }
 ];

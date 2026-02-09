@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import ClientContactModal from "@/components/ClientContactModal";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import Hero from "@/components/web-developer/Hero";
 import ComparisonTable from "@/components/web-developer/ComparisonTable";
 import CTA from "@/components/web-developer/CTA";
 import FAQs from "@/components/web-developer/Faqs";
