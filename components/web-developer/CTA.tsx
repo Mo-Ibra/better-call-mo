@@ -1,10 +1,16 @@
 import Link from "next/link";
 import type { Location } from "@/lib/locations";
 
-export default function CTA({ location }: { location: Location }) {
+export default function CTA({ location }: { location?: Location }) {
   return (
     <section className="py-24 px-6 text-center">
-      <h2 className="text-4xl font-bold mb-6">Ready to dominate the market in {location.city}?</h2>
+
+      {location ? (
+        <h2 className="text-4xl font-bold mb-6">Ready to dominate the market in {location.city}?</h2>
+      ) : (
+        <h2 className="text-4xl font-bold mb-6">Ready to dominate the market?</h2>
+      )}
+
       <p className="text-gray-400 mb-8 max-w-xl mx-auto">
         Stop losing customers to competitors with better websites. Let's build something extraordinary together.
       </p>

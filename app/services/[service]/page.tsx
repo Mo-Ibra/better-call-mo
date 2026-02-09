@@ -165,13 +165,13 @@ export default async function ServicePage({ params }: PageProps) {
           </div>
         </section>
 
-        <ComparisonTable location={dummyLocation} />
+        <ComparisonTable />
 
         <Testimonials />
 
         <FAQs location={dummyLocation} />
 
-        <CTA location={dummyLocation} />
+        <CTA />
       </main>
 
       <ClientContactModal />
