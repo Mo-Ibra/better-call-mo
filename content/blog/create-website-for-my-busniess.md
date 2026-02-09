@@ -139,7 +139,9 @@ Make sure your website:
 - Is connected to **Google Search Console** and **Google Analytics**
 
 If you’re not sure how to handle all that — this is where a developer like me steps in 😉  
-I build websites that are not only visually professional but also **optimized for Google from day one.**
+I build websites that are not only visually professional but also **optimized for Google from day one.** 
+
+Whether you need a [lightning-fast business site](/services/nextjs-development) or a [scaled-up SaaS solution](/services/saas-mvp-development), I've got you covered.
 
 ---
 
@@ -197,6 +199,12 @@ Creating a business website doesn’t have to be complicated.
 You just need clarity, strategy, and the right developer to bring it all together.
 
 👉 If you’re ready to take your business online — I’d love to help you build a site that **looks great, loads fast, and gets results.**
+
+### Ready to build your business website?
+
+Don't settle for mediocre. Whether you're in [New York](/web-developer/new-york), [Melbourne](/web-developer/melbourne), or [San Francisco](/web-developer/san-francisco), let's create a digital asset that grows your business.
+
+[**Start Your Business Website Discovery →**](/#contact)
 
 ---
 

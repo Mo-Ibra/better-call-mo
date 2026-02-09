@@ -69,7 +69,7 @@ But after the first week, the owner called me and said:
 > “Mohamed, the website looks great — but we’re getting the same number of orders. Did anything really change?”
 
 That’s the thing — _nothing changes overnight_.  
-The power of a website isn’t in day one traffic, it’s in what happens over time.
+The power of a website isn’t in day one traffic, it’s in what happens over time, especially when built with [modern technologies like Next.js](/services/nextjs-development) that are designed for search engines.
 
 ---
 
@@ -266,3 +266,11 @@ Take control. Build your space. Own your digital presence.
 ---
 
 _Written by Mohamed — a web developer helping restaurants create websites that grow with them, not against them._
+
+---
+
+### Ready to take your restaurant to the next level?
+
+If you're looking for an [expert Next.js developer](/services/nextjs-development) to build a high-conversion, lightning-fast website for your restaurant, I'm here to help. Whether you're in [Berlin](/web-developer/berlin), [London](/web-developer/london), or anywhere else, let's build something extraordinary.
+
+[**Book Your Free Restaurant Strategy Session →**](/#contact)

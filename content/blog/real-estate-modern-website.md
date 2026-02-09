@@ -171,6 +171,14 @@ It helps you:
 - Improve SEO and online visibility
 - Share expertise and engage clients
 
-> If your agency doesn’t have a website yet, **I can build it for your agency**. Invest in a modern website, and let it **work for you around the clock**.
+> If your agency doesn’t have a website yet, **I can build it for your agency**. As an [expert in SaaS and MVP development](/services/saas-mvp-development), I specialize in creating high-performance platforms that don't just look good, but sell.
+
+---
+
+### Ready to dominate your local real estate market?
+
+Whether you need a custom property portal or a high-speed agency site, I'm here to help. If you're in [New York](/web-developer/new-york), [Melbourne](/web-developer/melbourne), or [San Francisco](/web-developer/san-francisco), let's build your digital advantage.
+
+[**Get Your Free Real Estate Strategy Audit →**](/#contact)
 
 For inspiration, check out [Awwwards Real Estate Websites](https://www.awwwards.com/websites/real-estate/) to see how top agencies showcase properties online.
