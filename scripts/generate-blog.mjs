@@ -3,7 +3,7 @@ import path from 'path';
 
 // --- CONFIGURATION ---
 const OLLAMA_API = 'http://localhost:11434/api/chat';
-const MODEL = 'deepseek-v3.1:671b-cloud'; // you can use gpt-oss:120b-cloud or anything
+const MODEL = 'glm-4.6:cloud'; // you can use gpt-oss:120b-cloud or anything
 const BLOG_DIR = path.join(process.cwd(), '../content/blog');
 
 // --- CONTEXT DATA (extracted from lib/) ---
