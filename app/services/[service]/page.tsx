@@ -50,18 +50,6 @@ export default async function ServicePage({ params }: PageProps) {
     notFound();
   }
 
-  // Generic location-like object for components that expect it
-  const dummyLocation = {
-    city: "Global",
-    country: "Worldwide",
-    flag: "🌍",
-    region: "Global" as any,
-    currency: "USD" as any,
-    currencySymbol: "$",
-    timezone: "UTC",
-    minRate: 2500,
-    slug: "global"
-  };
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -82,6 +70,14 @@ export default async function ServicePage({ params }: PageProps) {
       author: { "@type": "Person", name: t.name },
       reviewBody: t.content,
       reviewRating: { "@type": "Rating", ratingValue: t.rating }
+    })),
+    mainEntity: service.faqs.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer
+      }
     }))
   };
 
@@ -169,7 +165,7 @@ export default async function ServicePage({ params }: PageProps) {
 
         <Testimonials />
 
-        <FAQs location={dummyLocation} />
+        <FAQs items={service.faqs} />
 
         <CTA />
       </main>

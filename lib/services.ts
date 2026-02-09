@@ -8,6 +8,7 @@ export interface Service {
   techStack: string[];
   ctaText: string;
   schemaType: "SoftwareApplication" | "Service";
+  faqs: { question: string; answer: string }[];
 }
 
 export const services: Service[] = [
@@ -30,7 +31,21 @@ export const services: Service[] = [
     ],
     techStack: ["Next.js", "React", "TypeScript", "Vercel"],
     ctaText: "Start Your Next.js Project",
-    schemaType: "SoftwareApplication"
+    schemaType: "SoftwareApplication",
+    faqs: [
+      {
+        question: "Why should I choose Next.js for my website?",
+        answer: "Next.js offers superior performance, SEO optimization through server-side rendering, and a great developer experience. It's the industry standard for modern React applications."
+      },
+      {
+        question: "Will my site be SEO-friendly?",
+        answer: "Absolutely. Next.js is built with SEO in mind. By serving pre-rendered HTML to search engines, your site will index faster and rank higher than traditional client-side apps."
+      },
+      {
+        question: "Can you migrate my current React app to Next.js?",
+        answer: "Yes, I specialize in migrating legacy React applications to the Next.js App Router for better performance and maintainability."
+      }
+    ]
   },
   {
     slug: "shopify-to-nextjs",
@@ -51,7 +66,21 @@ export const services: Service[] = [
     ],
     techStack: ["Shopify", "Next.js", "Tailwind CSS", "Stripe"],
     ctaText: "Upgrade Your Store",
-    schemaType: "Service"
+    schemaType: "Service",
+    faqs: [
+      {
+        question: "Will I still be able to use the Shopify admin?",
+        answer: "Yes! You keep the powerful Shopify backend for orders and products, while we build a completely custom, faster frontend using Next.js."
+      },
+      {
+        question: "How does this improve conversion rates?",
+        answer: "Speed is the #1 factor in e-commerce conversion. By making your store instant and removing the 'clunky' feel of standard themes, customers stay longer and buy more."
+      },
+      {
+        question: "What happens to my current apps?",
+        answer: "Most popular Shopify apps have APIs that we can integrate. For others, we can often build superior custom versions that don't slow down your site."
+      }
+    ]
   },
   {
     slug: "saas-mvp-development",
@@ -72,7 +101,21 @@ export const services: Service[] = [
     ],
     techStack: ["Next.js", "Prisma", "PostgreSQL", "Tailwind"],
     ctaText: "Build Your MVP",
-    schemaType: "SoftwareApplication"
+    schemaType: "SoftwareApplication",
+    faqs: [
+      {
+        question: "How fast can we launch an MVP?",
+        answer: "Depending on scope, a solid MVP can usually be launched in 3-5 weeks. I focus on the 'Core Value' to get you in front of users as fast as possible."
+      },
+      {
+        question: "Do I own the code?",
+        answer: "Yes, 100%. Once the project is complete, the full source code is transferred to you. No vendor lock-in, ever."
+      },
+      {
+        question: "Can we scale this later?",
+        answer: "Definitely. I use industry-standard tools like PostgreSQL and Prisma, ensuring your infrastructure can handle millions of users when you're ready to grow."
+      }
+    ]
   },
   {
     slug: "mobile-app-development",
@@ -93,7 +136,21 @@ export const services: Service[] = [
     ],
     techStack: ["React Native", "Flutter", "Firebase", "TypeScript"],
     ctaText: "Scope Your Mobile App",
-    schemaType: "SoftwareApplication"
+    schemaType: "SoftwareApplication",
+    faqs: [
+      {
+        question: "Should I choose React Native or Flutter?",
+        answer: "It depends on your project. React Native is great if you already have a React web app, while Flutter is excellent for highly custom, UI-intensive designs. I'll help you pick the right one."
+      },
+      {
+        question: "Can one app work on both iPhone and Android?",
+        answer: "Yes! That's the power of the cross-platform tools I use. We write the code once and deploy it to both the Apple App Store and Google Play Store."
+      },
+      {
+        question: "Do you handle the App Store submission process?",
+        answer: "Yes, I manage the entire process from development to successful deployment on both stores, including handling certificates and submission requirements."
+      }
+    ]
   },
   {
     slug: "web-performance-optimization",
@@ -114,6 +171,20 @@ export const services: Service[] = [
     ],
     techStack: ["Lighthouse", "WebVitals", "Cloudflare", "Next.js"],
     ctaText: "Speed Up My Site",
-    schemaType: "Service"
+    schemaType: "Service",
+    faqs: [
+      {
+        question: "Why does my site's speed matter for SEO?",
+        answer: "Google uses 'Core Web Vitals' as a ranking factor. Faster sites rank higher, while slow sites are penalized. Speed is directly correlated to search visibility."
+      },
+      {
+        question: "Can any website be optimized?",
+        answer: "Most can. Whether you're on WordPress, React, or an older CMS, there are always technical optimizations we can make to squeeze out more performance."
+      },
+      {
+        question: "What is a good performance score?",
+        answer: "I aim for 90+ on Lighthouse across all categories (Performance, SEO, Accessibility). A Green score is my standard for every project I optimize."
+      }
+    ]
   }
 ];
