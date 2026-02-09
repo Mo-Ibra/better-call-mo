@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import { getAllBlogPosts } from "@/lib/blog";
 import { availableLanguages, LanguageCode } from "@/lib/i18n.config";
 import { locations } from "@/lib/locations";
+import { services } from "@/lib/services";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://bettercallmo.dev";
@@ -52,6 +53,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
+    });
+  });
+
+  // 5. Service Pages
+  services.forEach((service) => {
+    sitemapEntries.push({
+      url: `${baseUrl}/services/${service.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
     });
   });
 

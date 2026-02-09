@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { locations } from "@/lib/locations";
+import { services } from "@/lib/services";
 
 const Footer = () => {
   function getCurrentYear() {
@@ -52,6 +53,22 @@ const Footer = () => {
                 className="text-gray-500 hover:text-primary transition-colors"
               >
                 Web Developer in {loc.city}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Services Links for SEO */}
+        <div className="mt-8 pt-8 border-t border-white/5">
+          <p className="text-sm font-semibold mb-4 text-gray-400">Our Services</p>
+          <div className="flex justify-center flex-wrap gap-x-6 gap-y-2 text-sm">
+            {services.map((service) => (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="text-gray-500 hover:text-primary transition-colors"
+              >
+                {service.title}
               </Link>
             ))}
           </div>
