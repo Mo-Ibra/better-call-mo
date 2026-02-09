@@ -8,6 +8,8 @@ import Hero from "@/components/web-developer/Hero";
 import ComparisonTable from "@/components/web-developer/ComparisonTable";
 import CTA from "@/components/web-developer/CTA";
 import FAQs from "@/components/web-developer/Faqs";
+import Testimonials from "@/components/web-developer/Testimonials";
+import { testimonials, aggregateRating } from "@/lib/testimonials";
 import Link from "next/link";
 import Script from "next/script";
 
@@ -29,10 +31,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `${service.title} | Better Call Mo`,
-    description: service.shortDesc,
+    description: `${service.shortDesc} I specialize in high-performance web development, ensuring your project is fast, secure, and optimized for search engines. Let's build something extraordinary together that drives real business results.`,
+    alternates: {
+      canonical: `https://bettercallmo.dev/services/${service.slug}`,
+    },
     openGraph: {
       title: `${service.title} | Better Call Mo`,
-      description: service.shortDesc,
+      description: `${service.shortDesc} Expert Next.js & React developer with a focus on conversion and performance.`,
       type: "website",
     },
   };
@@ -69,6 +74,16 @@ export default async function ServicePage({ params }: PageProps) {
       name: "Mo Ibra",
     },
     areaServed: "Worldwide",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ...aggregateRating
+    },
+    review: testimonials.slice(0, 2).map(t => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: t.name },
+      reviewBody: t.content,
+      reviewRating: { "@type": "Rating", ratingValue: t.rating }
+    }))
   };
 
   return (
@@ -152,6 +167,8 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
 
         <ComparisonTable location={dummyLocation} />
+
+        <Testimonials />
 
         <FAQs location={dummyLocation} />
 
