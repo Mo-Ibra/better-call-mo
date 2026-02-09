@@ -7,6 +7,7 @@ keywords: ["React Native vs Flutter 2026", "cross-platform mobile development", 
 tags: ["Mobile Development", "Framework Comparison", "Development Strategy"]
 image: "/images/blog/placeholder.jpg"
 ---
+
 ## The Content Starts Here...
 
 It was 3 AM, and I was staring at my third cup of coffee, debugging a performance issue that was making our client's e-commerce app crawl like a snail through molasses. The app, built with React Native, was taking 8 seconds to load the product catalog on mid-range Android devices. This wasn't just a technical problem – it was costing our client thousands in abandoned carts every day.

@@ -7,6 +7,7 @@ keywords: ["build saas on a budget", "saas mvp development", "low-cost saas tool
 tags: ["SaaS", "Web Development", "Startups", "Next.js", "Budgeting"]
 image: "/images/blog/placeholder.jpg"
 ---
+
 ## The Content Starts Here...
 
 Let me tell you about Sarah. She’s a brilliant marketing strategist with an idea that was keeping her up at 3 AM: a SaaS tool that automates complex client reporting, pulling data from disparate ad platforms into one beautiful dashboard. She had the vision, the domain name, and a fire in her belly. What she didn’t have was a six-figure seed round. Her budget was lean, almost painfully so.
