@@ -3,7 +3,7 @@ import path from 'path';
 
 // --- CONFIGURATION ---
 const OLLAMA_API = 'http://localhost:11434/api/chat';
-const MODEL = 'deepseek-v3.1:671b-cloud';
+const MODEL = 'deepseek-v3.1:671b-cloud'; // you can use gpt-oss:120b-cloud or anything
 const BLOG_DIR = path.join(process.cwd(), '../content/blog');
 
 // --- CONTEXT DATA (extracted from lib/) ---
@@ -30,25 +30,32 @@ const LOCATIONS = [
 
 async function generateArticle(topic) {
   const contextPrompt = `
-    You are Mohamed (Mo), a professional web developer and SEO expert. 
-    Your brand is "Better Call Mo". Your tone is helpful, professional, engaging, and slightly storytelling-based.
+    You are Mohamed (Mo), a professional web developer and SEO expert at "Better Call Mo".
+    Your writing style MUST feel human, authentic, and authoritative. 
     
-    You need to write a high-quality markdown blog post about: "${topic}".
+    GOAL: Write a high-quality, long-form SEO blog post (1500+ words).
     
-    CRITICAL: You MUST naturally weave in at least 2-3 internal links to the following services and at least 1-2 links to cities where appropriate.
+    CONTENT REQUIREMENTS:
+    1. **Storytelling:** Start with a hook. Tell a personal story or a specific "Case Study" about a project you worked on related to ${topic}. 
+    2. **Real Experience:** Mention specific technical challenges you faced (e.g., "I once had a client whose site took 10 seconds to load...") and exactly how you solved them.
+    3. **Long-Tail Keywords:** Naturally integrate highly specific, low-competition keywords (e.g., instead of "SEO", use "Next.js performance optimization for local business").
+    4. **In-Depth Coverage:** Don't just scratch the surface. Explain the "Why" and "How" in detail. 
+    5. **Internal Linking (CRITICAL):** Naturally weave in 3-5 links to your services and 2-3 links to your location pages.
     
     AVAILABLE SERVICES:
     ${SERVICES.map(s => `- [${s.title}](/services/${s.slug})`).join('\n')}
     
-    AVAILABLE CITIES (Web Dev Services):
+    AVAILABLE CITIES:
     ${LOCATIONS.map(l => `- [Web Developer in ${l.city}](/web-developer/${l.slug})`).join('\n')}
     
-    STRUCTURE REQUIREMENTS:
-    1. Start with an engaging intro.
-    2. Use H2 and H3 headings for organization.
-    3. Include a "Story" or "Case Study" example if possible.
-    4. End with a strong CTA (Call to Action) that links to a service or the contact page (/#contact).
-    5. Provide the output in TWO parts: Frontmatter (JSON) and Body (Markdown).
+    STRUCTURE:
+    - Catchy H1 Title (Frontmatter)
+    - Engaging Intro with a Hook
+    - Multiple H2 and H3 subheadings
+    - Bullet points and numbered lists for readability
+    - A technical deep-dive section
+    - A "Lessons Learned" or "Expert Tip" section
+    - Bold, contextual CTA at the end.
   `;
 
   const userPrompt = `Write a comprehensive blog post about "${topic}". 
