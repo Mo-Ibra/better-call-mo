@@ -115,9 +115,8 @@ export default function Hero() {
           {/* Left side - Text content */}
           <div className="text-center lg:text-left">
             {/* Main Tagline */}
-            <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-balance">
-              <span className="text-foreground">Better Call</span>{" "}
-              <span className="text-primary md:rounded-2xl md:shadow-[0_0_20px_rgba(16,185,129,0.3)]">Mo!</span>
+            <h1 className="hero-title text-5xl md:text-7xl font-bold mb-6 text-balance">
+              Better Call Mo!
             </h1>
 
             {/* Subtitle */}
@@ -204,7 +203,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-lg px-8 py-6 neon-glow animate-pulse"
+                className="bg-primary hover:bg-primary/90 text-lg px-8 py-6 neon-glow animate-pulse cursor-pointer"
                 onClick={scrollToContact}
               >
                 {"Book Your Spot Now"}
@@ -212,7 +211,7 @@ export default function Hero() {
               <Button
                 variant="outline"
                 size="lg"
-                className="text-lg px-8 py-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                className="text-lg px-8 py-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent cursor-pointer"
                 onClick={() => {
                   const element = document.getElementById("projects");
                   element?.scrollIntoView({ behavior: "smooth" });
