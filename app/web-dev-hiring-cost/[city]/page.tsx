@@ -41,8 +41,9 @@ export default async function Page({ params }: { params: Promise<{ city: string 
   return (
 
     <>
+      <Navigation />
+
       <main className="bg-black min-h-screen">
-        <Navigation />
 
         {/* Informational Hero Section */}
         <section className="relative pt-32 pb-20 px-6 text-center border-b border-white/5">
