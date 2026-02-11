@@ -75,7 +75,7 @@ export default function SalaryBreakdown({ location }: { location: Location }) {
 
           {/* Right Side: The Smart Alternative */}
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary-600 to-indigo-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+            <div className="absolute -inset-1 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
             <div className="relative bg-zinc-900 border border-primary-500/20 rounded-3xl p-10 space-y-8">
               <div className="flex justify-between items-center">
                 <div className="bg-primary/20 text-primary-400 text-xs font-black px-4 py-2 rounded-full uppercase tracking-widest">
