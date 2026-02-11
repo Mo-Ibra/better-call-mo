@@ -8,6 +8,9 @@ export interface Location {
   currencySymbol: string;
   timezone: string; // e.g., "CET", "EST"
   minRate: number; // minimum project size in that currency
+  avgSalary: number; // yearly senior dev salary
+  overheadCost: number; // estimate of taxes + benefits + office
+  hiringDifficulty: "Medium" | "High" | "Extremely High";
 }
 
 export const locations: Location[] = [
@@ -21,6 +24,9 @@ export const locations: Location[] = [
     currencySymbol: "€",
     timezone: "CET",
     minRate: 2000,
+    avgSalary: 95000,
+    overheadCost: 25000,
+    hiringDifficulty: "High",
   },
   {
     slug: "london",
@@ -32,6 +38,9 @@ export const locations: Location[] = [
     currencySymbol: "£",
     timezone: "GMT",
     minRate: 1800,
+    avgSalary: 110000,
+    overheadCost: 30000,
+    hiringDifficulty: "High",
   },
   {
     slug: "new-york",
@@ -43,6 +52,9 @@ export const locations: Location[] = [
     currencySymbol: "$",
     timezone: "EST",
     minRate: 2500,
+    avgSalary: 185000,
+    overheadCost: 45000,
+    hiringDifficulty: "Extremely High",
   },
   {
     slug: "toronto",
@@ -54,6 +66,9 @@ export const locations: Location[] = [
     currencySymbol: "$",
     timezone: "EST",
     minRate: 3000,
+    avgSalary: 145000,
+    overheadCost: 35000,
+    hiringDifficulty: "High",
   },
   {
     slug: "sydney",
@@ -65,6 +80,9 @@ export const locations: Location[] = [
     currencySymbol: "$",
     timezone: "AEST",
     minRate: 3500,
+    avgSalary: 165000,
+    overheadCost: 40000,
+    hiringDifficulty: "High",
   },
   {
     slug: "amsterdam",
@@ -76,6 +94,9 @@ export const locations: Location[] = [
     currencySymbol: "€",
     timezone: "CET",
     minRate: 2000,
+    avgSalary: 90000,
+    overheadCost: 22000,
+    hiringDifficulty: "Medium",
   },
   {
     slug: "dubai",
@@ -87,6 +108,9 @@ export const locations: Location[] = [
     currencySymbol: "AED",
     timezone: "GST",
     minRate: 8000,
+    avgSalary: 380000,
+    overheadCost: 0, // Tax free, but high relocation/visa
+    hiringDifficulty: "High",
   },
   {
     slug: "frankfurt",
@@ -98,6 +122,9 @@ export const locations: Location[] = [
     currencySymbol: "€",
     timezone: "CET",
     minRate: 2500,
+    avgSalary: 105000,
+    overheadCost: 28000,
+    hiringDifficulty: "High",
   },
   {
     slug: "san-francisco",
@@ -109,6 +136,9 @@ export const locations: Location[] = [
     currencySymbol: "$",
     timezone: "PST",
     minRate: 3000,
+    avgSalary: 210000,
+    overheadCost: 55000,
+    hiringDifficulty: "Extremely High",
   },
   {
     slug: "melbourne",
@@ -120,5 +150,8 @@ export const locations: Location[] = [
     currencySymbol: "$",
     timezone: "AEST",
     minRate: 3500,
+    avgSalary: 160000,
+    overheadCost: 38000,
+    hiringDifficulty: "High",
   }
 ];
