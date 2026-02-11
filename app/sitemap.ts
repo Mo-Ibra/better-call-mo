@@ -66,5 +66,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   });
 
+  // 6. Hiring Cost Pages
+  locations.forEach((loc) => {
+    sitemapEntries.push({
+      url: `${baseUrl}/web-dev-hiring-cost/${loc.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    });
+  });
+
   return sitemapEntries;
 }

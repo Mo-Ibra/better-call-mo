@@ -73,6 +73,22 @@ const Footer = () => {
             ))}
           </div>
         </div>
+
+        {/* Hiring Cost Links for SEO */}
+        <div className="mt-8 pt-8 border-t border-white/5">
+          <p className="text-sm font-semibold mb-4 text-gray-400">Developer Hiring Costs</p>
+          <div className="flex justify-center flex-wrap gap-x-6 gap-y-2 text-sm">
+            {locations.map((loc) => (
+              <Link
+                key={loc.slug}
+                href={`/web-dev-hiring-cost/${loc.slug}`}
+                className="text-gray-500 hover:text-primary transition-colors"
+              >
+                Hiring Devs in {loc.city}
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
     </footer>
   );
