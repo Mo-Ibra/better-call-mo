@@ -9,7 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://bettercallmo.dev";
   const sitemapEntries: MetadataRoute.Sitemap = [];
 
-  // 1. Main page & Static Pages
+  // 1. Main page
   sitemapEntries.push({
     url: baseUrl,
     lastModified: new Date(),
@@ -17,19 +17,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 1,
   });
 
-  sitemapEntries.push({
-    url: `${baseUrl}/ask-mo`,
-    lastModified: new Date(),
-    changeFrequency: "weekly",
-    priority: 0.8,
-  });
-
-  // 2. Pages for each language
+  // 2. Directory Pages for each language (Blog & Ask Mo)
   for (const lang of availableLanguages) {
     const blogUrl = lang === "en" ? `${baseUrl}/blog` : `${baseUrl}/${lang}/blog`;
+    const askMoUrl = lang === "en" ? `${baseUrl}/ask-mo` : `${baseUrl}/${lang}/ask-mo`;
 
     sitemapEntries.push({
       url: blogUrl,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    });
+
+    sitemapEntries.push({
+      url: askMoUrl,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
