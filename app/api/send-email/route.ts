@@ -5,6 +5,12 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
+    // Spam Protection: Honeypot check
+    if (body.fax && body.fax.trim() !== "") {
+      console.warn("Contact form spam detected via Honeypot.");
+      return NextResponse.json({ success: true, message: "Request received" });
+    }
+
     // Send Email
     const transporter = nodemailer.createTransport({
       service: "Gmail",
@@ -26,8 +32,7 @@ export async function POST(req: NextRequest) {
         <p><b>Niche:</b> ${body.niche}</p>
         <p><b>Has Website:</b> ${body.hasWebsite}</p>
         <p><b>Website:</b> ${body.website || "N/A"}</p>
-        <p><b>Services:</b> ${
-          body.services.length ? body.services.join(", ") : "N/A"
+        <p><b>Services:</b> ${body.services.length ? body.services.join(", ") : "N/A"
         }</p>
         <p><b>Budget:</b> $${body.budget}</p>
         <p><b>Message:</b> ${body.message || "No message provided"}</p>`,

@@ -11,7 +11,8 @@ export default function QuestionForm() {
     name: "",
     email: "",
     category: "Technical",
-    content: ""
+    content: "",
+    website: "" // Honeypot field
   });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -91,6 +92,17 @@ export default function QuestionForm() {
                 className="w-full bg-black border border-white/5 rounded-2xl px-5 py-3.5 focus:outline-none focus:border-primary/50 transition-colors text-sm"
               />
             </div>
+          </div>
+
+          {/* Honeypot field - Hidden from users */}
+          <div className="absolute left-[-9999px] top-[-9999px] opacity-0 pointer-events-none" aria-hidden="true">
+            <input
+              tabIndex={-1}
+              autoComplete="off"
+              value={formData.website}
+              onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+              placeholder="Your website URL"
+            />
           </div>
 
           <div>

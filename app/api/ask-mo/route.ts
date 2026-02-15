@@ -5,6 +5,13 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
+    // Spam Protection: Honeypot check
+    // If the hidden 'website' field is filled, it's likely a bot.
+    if (body.website && body.website.trim() !== "") {
+      console.warn("Spam detected via Honeypot. Discarding submission.");
+      return NextResponse.json({ success: true, message: "Submission successful" });
+    }
+
     const transporter = nodemailer.createTransport({
       service: "Gmail",
       auth: {

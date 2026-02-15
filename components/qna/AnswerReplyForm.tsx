@@ -15,7 +15,8 @@ export default function AnswerReplyForm({
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    content: ""
+    content: "",
+    website: "" // Honeypot field
   });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -84,6 +85,17 @@ export default function AnswerReplyForm({
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               placeholder="Your Email"
               className="w-full bg-black/40 border border-white/5 rounded-xl px-4 py-2 focus:outline-none focus:border-primary/30 transition-all text-xs"
+            />
+          </div>
+
+          {/* Honeypot field - Hidden from users */}
+          <div className="absolute left-[-9999px] top-[-9999px] opacity-0 pointer-events-none" aria-hidden="true">
+            <input
+              tabIndex={-1}
+              autoComplete="off"
+              value={formData.website}
+              onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+              placeholder="Your website URL"
             />
           </div>
 

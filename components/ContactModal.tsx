@@ -15,6 +15,7 @@ interface FormDataProps {
   fullName: string;
   email: string;
   message: string;
+  fax: string; // Honeypot field
 }
 
 const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
@@ -29,6 +30,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     fullName: "",
     email: "",
     message: "",
+    fax: "",
   });
   const [showSuccess, setShowSuccess] = useState(false);
 
@@ -49,6 +51,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         fullName: "",
         email: "",
         message: "",
+        fax: "",
       });
     }
   }, [isOpen]);
@@ -115,16 +118,14 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div 
-      className={`fixed inset-0 bg-black bg-opacity-90 backdrop-blur-xl flex items-center justify-center z-50 p-4 overflow-y-auto transition-all duration-300 ${
-        isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-      }`}
+    <div
+      className={`fixed inset-0 bg-black bg-opacity-90 backdrop-blur-xl flex items-center justify-center z-50 p-4 overflow-y-auto transition-all duration-300 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`}
       onClick={handleModalClick}
     >
-      <div className={`bg-gradient-to-br from-gray-900 to-black rounded-3xl max-w-2xl w-full max-h-screen overflow-y-auto relative shadow-2xl border border-emerald-400 border-opacity-20 transition-transform duration-300 ${
-        isOpen ? 'scale-100 translate-y-0' : 'scale-90 translate-y-12'
-      }`}>
-        
+      <div className={`bg-gradient-to-br from-gray-900 to-black rounded-3xl max-w-2xl w-full max-h-screen overflow-y-auto relative shadow-2xl border border-emerald-400 border-opacity-20 transition-transform duration-300 ${isOpen ? 'scale-100 translate-y-0' : 'scale-90 translate-y-12'
+        }`}>
+
         {/* Close Button */}
         <button
           onClick={closeModal}
@@ -135,7 +136,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 
         {/* Progress Bar */}
         <div className="absolute top-0 left-0 w-full h-1 bg-card/50 bg-opacity-10 overflow-hidden rounded-t-3xl">
-          <div 
+          <div
             className="h-full bg-gradient-to-r from-emerald-400 to-green-400 transition-all duration-500 shadow-lg shadow-emerald-400/50"
             style={{ width: `${progress}%` }}
           ></div>
@@ -155,7 +156,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         <div className="px-8 pb-8">
           {!showSuccess ? (
             <div>
-              
+
               {/* Step 1: Project Type */}
               <div className={`${currentStep === 1 ? 'block animate-fade-in' : 'hidden'}`}>
                 <h4 className="text-xl font-semibold text-white mb-6 leading-relaxed">
@@ -174,11 +175,10 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                           required
                           className="absolute opacity-0"
                         />
-                        <div className={`w-4 h-4 rounded-full border-2 mr-3 transition-all duration-300 ${
-                          formData.projectType === type 
-                            ? 'border-emerald-400 bg-emerald-400' 
-                            : 'border-card/90 border-opacity-20'
-                        }`}>
+                        <div className={`w-4 h-4 rounded-full border-2 mr-3 transition-all duration-300 ${formData.projectType === type
+                          ? 'border-emerald-400 bg-emerald-400'
+                          : 'border-card/90 border-opacity-20'
+                          }`}>
                           {formData.projectType === type && (
                             <div className="w-2 h-2 bg-gray-900 rounded-full m-auto mt-0.5"></div>
                           )}
@@ -192,8 +192,8 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   )}
                 </div>
                 <div className="flex justify-center">
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     onClick={nextStep}
                     className="px-8 py-3 bg-emerald-400 text-gray-900 font-semibold rounded-xl transition-all duration-300 hover:bg-emerald-300 hover:shadow-lg hover:shadow-emerald-400/30 hover:-translate-y-0.5 uppercase tracking-wider min-w-48"
                   >
@@ -218,8 +218,8 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   />
                 </div>
                 <div className="flex justify-center">
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     onClick={nextStep}
                     className="px-8 py-3 bg-emerald-400 text-gray-900 font-semibold rounded-xl transition-all duration-300 hover:bg-emerald-300 hover:shadow-lg hover:shadow-emerald-400/30 hover:-translate-y-0.5 uppercase tracking-wider min-w-48"
                   >
@@ -243,11 +243,10 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                       onChange={(e) => handleInputChange("hasWebsite", e.target.value)}
                       className="absolute opacity-0"
                     />
-                    <div className={`w-4 h-4 rounded-full border-2 mr-3 transition-all duration-300 ${
-                      formData.hasWebsite === "yes" 
-                        ? 'border-emerald-400 bg-emerald-400' 
-                        : 'border-card/90 border-opacity-20'
-                    }`}>
+                    <div className={`w-4 h-4 rounded-full border-2 mr-3 transition-all duration-300 ${formData.hasWebsite === "yes"
+                      ? 'border-emerald-400 bg-emerald-400'
+                      : 'border-card/90 border-opacity-20'
+                      }`}>
                       {formData.hasWebsite === "yes" && (
                         <div className="w-2 h-2 bg-gray-900 rounded-full m-auto mt-0.5"></div>
                       )}
@@ -257,7 +256,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                       <div className="absolute left-0 top-0 w-1 h-full bg-emerald-400"></div>
                     )}
                   </label>
-                  
+
                   <label className="flex items-center p-4 bg-card/50 bg-opacity-5 border border-card/90 border-opacity-10 rounded-xl cursor-pointer transition-all duration-300 hover:bg-opacity-10 hover:border-emerald-400 hover:border-opacity-50 relative overflow-hidden">
                     <input
                       type="radio"
@@ -267,11 +266,10 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                       onChange={(e) => handleInputChange("hasWebsite", e.target.value)}
                       className="absolute opacity-0"
                     />
-                    <div className={`w-4 h-4 rounded-full border-2 mr-3 transition-all duration-300 ${
-                      formData.hasWebsite === "no" 
-                        ? 'border-emerald-400 bg-emerald-400' 
-                        : 'border-card/90 border-opacity-20'
-                    }`}>
+                    <div className={`w-4 h-4 rounded-full border-2 mr-3 transition-all duration-300 ${formData.hasWebsite === "no"
+                      ? 'border-emerald-400 bg-emerald-400'
+                      : 'border-card/90 border-opacity-20'
+                      }`}>
                       {formData.hasWebsite === "no" && (
                         <div className="w-2 h-2 bg-gray-900 rounded-full m-auto mt-0.5"></div>
                       )}
@@ -282,7 +280,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                     )}
                   </label>
                 </div>
-                
+
                 {formData.hasWebsite === "yes" && (
                   <div className="mb-8">
                     <input
@@ -294,10 +292,10 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                     />
                   </div>
                 )}
-                
+
                 <div className="flex justify-center">
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     onClick={nextStep}
                     className="px-8 py-3 bg-emerald-400 text-gray-900 font-semibold rounded-xl transition-all duration-300 hover:bg-emerald-300 hover:shadow-lg hover:shadow-emerald-400/30 hover:-translate-y-0.5 uppercase tracking-wider min-w-48"
                   >
@@ -328,11 +326,10 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                         onChange={() => toggleService(service)}
                         className="absolute opacity-0"
                       />
-                      <div className={`w-5 h-5 rounded border-2 mr-3 flex items-center justify-center transition-all duration-300 ${
-                        formData.services.includes(service)
-                          ? 'border-emerald-400 bg-emerald-400'
-                          : 'border-card/90 border-opacity-20'
-                      }`}>
+                      <div className={`w-5 h-5 rounded border-2 mr-3 flex items-center justify-center transition-all duration-300 ${formData.services.includes(service)
+                        ? 'border-emerald-400 bg-emerald-400'
+                        : 'border-card/90 border-opacity-20'
+                        }`}>
                         {formData.services.includes(service) && (
                           <svg className="w-3 h-3 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -347,8 +344,8 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   ))}
                 </div>
                 <div className="flex justify-center">
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     onClick={nextStep}
                     className="px-8 py-3 bg-emerald-400 text-gray-900 font-semibold rounded-xl transition-all duration-300 hover:bg-emerald-300 hover:shadow-lg hover:shadow-emerald-400/30 hover:-translate-y-0.5 uppercase tracking-wider min-w-48"
                   >
@@ -382,8 +379,8 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   </div>
                 </div>
                 <div className="flex justify-center">
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     onClick={nextStep}
                     className="px-8 py-3 bg-emerald-400 text-gray-900 font-semibold rounded-xl transition-all duration-300 hover:bg-emerald-300 hover:shadow-lg hover:shadow-emerald-400/30 hover:-translate-y-0.5 uppercase tracking-wider min-w-48"
                   >
@@ -420,9 +417,20 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                     value={formData.message}
                     onChange={(e) => handleInputChange("message", e.target.value)}
                   />
+
+                  {/* Honeypot field - Hidden from users */}
+                  <div className="absolute left-[-9999px] top-[-9999px] opacity-0 pointer-events-none" aria-hidden="true">
+                    <input
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={formData.fax}
+                      onChange={(e) => handleInputChange("fax", e.target.value)}
+                      placeholder="Your fax number"
+                    />
+                  </div>
                 </div>
                 <div className="flex justify-center">
-                  <button 
+                  <button
                     onClick={handleSubmit}
                     className="w-full max-w-xs px-8 py-4 bg-gradient-to-r from-emerald-400 to-green-400 text-gray-900 font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/40 hover:-translate-y-0.5 uppercase tracking-wider"
                   >
@@ -436,11 +444,10 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                 {[...Array(totalSteps)].map((_, index) => (
                   <span
                     key={index}
-                    className={`transition-all duration-300 rounded-full ${
-                      index < currentStep
-                        ? 'w-6 h-2 bg-emerald-400 shadow-sm shadow-emerald-400/50'
-                        : 'w-2 h-2 bg-card/90 bg-opacity-20'
-                    }`}
+                    className={`transition-all duration-300 rounded-full ${index < currentStep
+                      ? 'w-6 h-2 bg-emerald-400 shadow-sm shadow-emerald-400/50'
+                      : 'w-2 h-2 bg-card/90 bg-opacity-20'
+                      }`}
                   ></span>
                 ))}
               </div>
@@ -459,7 +466,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               <p className="text-white text-opacity-80 text-lg mb-8 leading-relaxed">
                 I&apos;ll get back to you as soon as possible.
               </p>
-              <button 
+              <button
                 onClick={closeModal}
                 className="w-full max-w-xs px-8 py-4 bg-gradient-to-r from-emerald-400 to-green-400 text-gray-900 font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/40 hover:-translate-y-0.5 uppercase tracking-wider"
               >
