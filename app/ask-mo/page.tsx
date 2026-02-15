@@ -2,13 +2,16 @@ import { getAllQnAs, QNA_CATEGORIES } from "@/lib/qna";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QnACard from "@/components/qna/QnACard";
-import QuestionForm from "@/components/qna/QuestionForm";
 import ClientContactModal from "@/components/ClientContactModal";
-import { MessageSquare, Search } from "lucide-react";
+import Link from "next/link";
+import { MessageSquare, Search, Plus } from "lucide-react";
 
 export const metadata = {
   title: "Ask Mo | Community Q&A for Web Developers & SaaS Founders",
   description: "Bettle-tested technical answers about SEO, Next.js, Performance, and Business strategy. Ask Mo your toughest coding questions.",
+  alternates: {
+    canonical: "/ask-mo",
+  },
 };
 
 export default async function AskMoPage() {
@@ -19,24 +22,41 @@ export default async function AskMoPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-12 px-6 border-b border-white/5">
-        <div className="max-w-6xl mx-auto text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary-400 text-xs font-black uppercase tracking-widest rounded-full">
-            <MessageSquare className="w-4 h-4" /> Community Q&A
-          </div>
-          <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight">
-            Better Call <span className="text-primary">Mo</span>
-          </h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto italic">
-            &quot;You have questions. I have the technical answers you need to win.&quot;
-          </p>
+      <section className="py-12 px-6 border-b border-white/5 bg-zinc-900/10 relative overflow-hidden">
+        {/* Abstract Background Element */}
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
-          <div className="max-w-xl mx-auto relative group">
-            <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-hover:text-primary transition-colors" />
-            <input
-              placeholder="Search community questions..."
-              className="w-full bg-zinc-900 border border-white/10 rounded-2xl px-14 py-5 focus:outline-none focus:border-primary transition-all text-lg"
-            />
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary text-[10px] font-black uppercase tracking-widest rounded-full border border-primary/20">
+                <MessageSquare className="w-3.5 h-3.5" /> Community Discussion
+              </div>
+              <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight">
+                Ask <span className="text-primary-400">Mo</span>
+              </h1>
+              <p className="text-xl text-gray-500 italic max-w-xl leading-relaxed">
+                The technical community board where "Saul Goodman" of code answers your toughest SaaS and SEO production questions.
+              </p>
+
+              <div className="flex flex-wrap gap-4 pt-4">
+                <Link
+                  href="/ask-mo/ask"
+                  className="inline-flex items-center gap-3 bg-primary text-black font-black px-8 py-4 rounded-2xl hover:bg-white transition-all shadow-xl shadow-primary/20 group uppercase tracking-widest text-[11px]"
+                >
+                  <Plus className="w-4 h-4 group-hover:rotate-90 transition-transform" />
+                  Ask a Question
+                </Link>
+
+                <div className="w-full md:w-80 relative group">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 group-hover:text-primary transition-colors" />
+                  <input
+                    placeholder="Search community posts..."
+                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-12 py-4 focus:outline-none focus:border-primary transition-all text-sm"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -69,50 +89,46 @@ export default async function AskMoPage() {
             </div>
           </div>
 
-          {/* Sidebar: Forum Rules & Community Info */}
-          <div className="space-y-8 h-fit sticky top-32">
-            <div className="bg-zinc-900 border border-white/5 rounded-2xl overflow-hidden shadow-2xl">
-              <div className="h-12 bg-primary/20 flex items-center px-6">
-                <h3 className="font-black text-[10px] uppercase tracking-widest text-primary-400">About r/AskMo</h3>
+          <aside className="space-y-8 h-fit sticky top-32">
+            {/* New Premium Sidebar CTA */}
+            <div className="bg-zinc-900 border border-white/5 p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                <Plus className="w-32 h-32 text-primary" />
               </div>
-              <div className="p-6 space-y-4">
-                <p className="text-xs text-gray-400 leading-relaxed">
-                  A technical space for founders and devs. Mo (Senior Web Architect) provides verified solutions to your toughest production bottlenecks.
-                </p>
-                <div className="grid grid-cols-2 gap-4 border-y border-white/5 py-4">
-                  <div>
-                    <p className="text-lg font-black">1.2k</p>
-                    <p className="text-[10px] text-gray-500 uppercase font-bold">Members</p>
-                  </div>
-                  <div>
-                    <p className="text-lg font-black">24</p>
-                    <p className="text-[10px] text-gray-500 uppercase font-bold">Online</p>
-                  </div>
-                </div>
-                <QuestionForm />
+              <div className="relative z-10">
+                <h3 className="text-2xl font-black mb-2 leading-none">Got a Doubt?</h3>
+                <p className="text-gray-400 mb-8 text-xs leading-relaxed">Mo Ibrahim reviews and provides verified answers to the community's toughest challenges.</p>
+                <Link
+                  href="/ask-mo/ask"
+                  className="w-full bg-primary text-black font-black py-4 rounded-2xl flex items-center justify-center gap-3 hover:bg-white transition-all text-[11px] tracking-[0.1em] uppercase shadow-lg shadow-primary/10"
+                >
+                  <Plus className="w-4 h-4" /> Start New Discussion
+                </Link>
               </div>
             </div>
 
-            <div className="bg-zinc-900 border border-white/5 p-6 rounded-2xl">
-              <h3 className="font-black text-[10px] uppercase tracking-widest text-gray-500 mb-4">Community Rules</h3>
-              <ul className="space-y-3">
-                <li className="text-[11px] text-gray-400 flex gap-2">
-                  <span className="text-gray-600">1.</span> Be technical and specific.
+            <div className="bg-zinc-900/40 border border-white/5 p-8 rounded-3xl">
+              <h3 className="font-black text-[10px] uppercase tracking-widest text-gray-500 mb-6 flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-primary rounded-full" /> Community Rules
+              </h3>
+              <ul className="space-y-4">
+                <li className="text-[11px] text-gray-400 flex gap-3 leading-relaxed">
+                  <span className="text-primary font-black">01.</span> Be technical and specific with your queries.
                 </li>
-                <li className="text-[11px] text-gray-400 flex gap-2">
-                  <span className="text-gray-600">2.</span> No SEO spam, only value.
+                <li className="text-[11px] text-gray-400 flex gap-3 leading-relaxed">
+                  <span className="text-primary font-black">02.</span> No SEO spam or self-promotion. Value only.
                 </li>
-                <li className="text-[11px] text-gray-400 flex gap-2">
-                  <span className="text-gray-600">3.</span> Respect the "Saul Goodman" attitude.
+                <li className="text-[11px] text-gray-400 flex gap-3 leading-relaxed">
+                  <span className="text-primary font-black">03.</span> Respect the direct, "no-fluff" code attitude.
                 </li>
               </ul>
             </div>
-          </div>
+          </aside>
         </div>
       </section>
 
-      <Footer />
       <ClientContactModal />
+      <Footer />
     </main>
   );
 }

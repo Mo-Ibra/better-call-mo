@@ -3,10 +3,9 @@ import { getQnABySlug, getAllQnAs } from "@/lib/qna";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ClientContactModal from "@/components/ClientContactModal";
-import QuestionForm from "@/components/qna/QuestionForm";
 import AnswerReplyForm from "@/components/qna/AnswerReplyForm";
 import FormattedMarkdown from "@/components/FormattedMarkdown";
-import { ArrowLeft, MessageCircle, Share2, ThumbsUp, ArrowBigUp, CheckCircle2 } from "lucide-react";
+import { ArrowBigUp, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
 interface Props {
@@ -29,6 +28,9 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `${qna.question} | Ask Mo Community`,
     description: qna.answerBody.substring(0, 160).replace(/[#*]/g, ""),
+    alternates: {
+      canonical: `/ask-mo/${qna.slug}`,
+    },
   };
 }
 
@@ -227,12 +229,12 @@ export default async function QnADetailPage({ params }: Props) {
                 </Link>
               </div>
             </div>
-          </div> {/* Closing pt-10 */}
-        </div> {/* Closing max-w-4xl */}
-      </div> {/* Closing pt-32 */}
+          </div>
+        </div>
+      </div>
 
-      <Footer />
       <ClientContactModal />
+      <Footer />
     </main>
   );
 }
