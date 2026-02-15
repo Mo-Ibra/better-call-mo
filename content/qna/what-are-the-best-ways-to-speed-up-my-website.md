@@ -1,6 +1,7 @@
 ---
 question: "What are the best ways to speed up my website?"
 category: "Technical"
+author: "Better Call Mo"
 askedByAvatar: "RJ"
 date: 2026-02-16
 upvotes: 7
