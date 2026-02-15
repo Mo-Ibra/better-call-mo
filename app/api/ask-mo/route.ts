@@ -41,6 +41,12 @@ export async function POST(req: NextRequest) {
               <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #000;">r/${body.category}</td>
             </tr>
             ` : ""}
+            ${body.questionTitle ? `
+            <tr>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #666;"><b>Thread:</b></td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #000;">${body.questionTitle}</td>
+            </tr>
+            ` : ""}
             <tr>
               <td style="padding: 20px 0 10px; color: #666;" colspan="2"><b>${body.type === 'reply' ? 'The Reply:' : 'The Question:'}</b></td>
             </tr>
@@ -50,6 +56,14 @@ export async function POST(req: NextRequest) {
               </td>
             </tr>
           </table>
+
+          ${body.questionSlug ? `
+          <div style="margin-top: 25px; text-align: center;">
+            <a href="https://bettercallmo.dev/ask-mo/${body.questionSlug}" style="display: inline-block; background: #00bc7c; color: #000; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">
+              View Discussion Thread
+            </a>
+          </div>
+          ` : ""}
           
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; font-size: 12px; color: #999; font-style: italic;">
             This submission was sent via the Ask Mo Community Board.
