@@ -1,12 +1,9 @@
 ---
-title: >-
-  De Shopify Lento a Next.js Relámpago: Un Caso de Estudio de Carga en 10
-  Segundos
+title: "De Shopify lento a Next.js rápido: un caso de estudio"
 description: >-
   Descubre cómo redujimos el tiempo de carga de 10 segundos de una tienda
   Shopify a menos de 2 segundos migrando a Next.js Headless. Un análisis
   profundo de los beneficios de rendimiento, el proceso de migración y el
-  impacto real en conversiones y SEO.
 date: '2026-02-15'
 author: Better Call Mo
 keywords:

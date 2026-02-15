@@ -1,5 +1,5 @@
 ---
-title: "From Shopify Lag to Next.js Lightning: A 10-Second Load Time Case Study"
+title: "From Shopify Lag to NextJS Lightning: Case Study"
 description: "Discover how we slashed a Shopify store's 10-second load time to under 2 seconds by switching to Headless Next.js. A deep dive into the performance benefits, the migration process, and the real-world impact on conversion and SEO."
 date: '2026-02-15'
 author: "Better Call Mo"

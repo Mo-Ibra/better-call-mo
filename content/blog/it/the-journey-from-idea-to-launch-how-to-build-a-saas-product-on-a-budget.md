@@ -1,7 +1,5 @@
 ---
-title: >-
-  Dal Tavolo della Cucina al Cloud: La Guida Pratica per Creare un Prodotto SaaS
-  con Budget Limitato
+title: "Creare un prodotto SaaS con budget ridotto: guida"
 description: >-
   Creare un prodotto SaaS non richiede il budget di Silicon Valley. Segui questa
   guida passo-passo basata su un'esperienza reale per lanciare il tuo MVP senza

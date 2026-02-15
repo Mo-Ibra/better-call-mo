@@ -1,7 +1,5 @@
 ---
-title: >-
-  Da Shopify Lento a Next.js Fulmineo: Caso Studio su Tempi di Caricamento da 10
-  Secondi
+title: "Da Shopify lento a Next.js veloce: un caso di studio"
 description: >-
   Scopri come abbiamo ridotto il tempo di caricamento di un negozio Shopify da
   10 secondi a meno di 2 secondi passando a Next.js Headless. Un'analisi

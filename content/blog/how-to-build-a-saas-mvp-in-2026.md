@@ -1,5 +1,5 @@
 ---
-title: "SaaS MVP in 2026: The Secret Sauce I Learned Building 'Project Nexus'"
+title: "Build a Successful SaaS MVP in 2026"
 description: "Learn the step-by-step process of building a successful SaaS MVP in 2026. A real-world case study from Better Call Mo covering tech stack, AI integration, and avoiding common pitfalls."
 date: '2026-02-15'
 author: "Better Call Mo"

@@ -1,5 +1,5 @@
 ---
-title: "The 3-Second Rule: How a 1-Second Delay Killed My Client's Sales (And How We Fixed It)"
+title: "How Website Speed Impacts Sales: Seconds Matter"
 description: "A deep dive into a real e-commerce case study. Discover how a 1-second page load delay decimated conversion rates and the exact, technical steps we took to triple their sales in 30 days by focusing on web performance optimization."
 date: '2026-02-15'
 author: "Better Call Mo"

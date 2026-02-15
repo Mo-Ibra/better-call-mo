@@ -1,7 +1,5 @@
 ---
-title: >-
-  Von Shopify-Lags zu Next.js-Blitzschnell: Eine Fallstudie zu
-  10-Sekunden-Ladezeiten
+title: "Von Shopify-Lag zu Next.js-Speed: Eine Fallstudie"
 description: >-
   Entdecken Sie, wie wir die Ladezeit eines Shopify-Shops von 10 Sekunden auf
   unter 2 Sekunden reduziert haben durch den Wechsel zu Headless Next.js. Ein

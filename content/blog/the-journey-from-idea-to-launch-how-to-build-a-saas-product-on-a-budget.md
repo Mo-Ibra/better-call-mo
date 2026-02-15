@@ -1,5 +1,5 @@
 ---
-title: "From Kitchen Table to Cloud: The Real-World Guide to Building a SaaS Product on a Budget"
+title: "Building a SaaS Product on a Budget"
 description: "Building a SaaS product doesn't require a Silicon Valley budget. Follow this step-by-step guide based on a real client journey to launch your MVP without breaking the bank."
 date: '2026-02-15'
 author: "Better Call Mo"

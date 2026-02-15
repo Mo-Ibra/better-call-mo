@@ -1,7 +1,5 @@
 ---
-title: >-
-  La Regola dei 3 Secondi: Come 1 Secondo di Ritardo Ha Ucciso le Vendite del
-  Mio Cliente (E Come Lo Abbiamo Risolto)
+title: "La regola dei 3 secondi: velocità e vendite"
 description: >-
   Un'analisi approfondita di un caso reale di e-commerce. Scopri come un ritardo
   di 1 secondo nel caricamento delle pagine ha decimato i tassi di conversione e

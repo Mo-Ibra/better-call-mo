@@ -1,7 +1,5 @@
 ---
-title: >-
-  De la Mesa de la Cocina a la Nube: La Guía Práctica para Construir un Producto
-  SaaS con un Presupuesto Limitado
+title: "Crear un producto SaaS con poco presupuesto: guía"
 description: >-
   Construir un producto SaaS no requiere el presupuesto de Silicon Valley. Sigue
   esta guía paso a paso basada en el viaje real de un cliente para lanzar tu MVP

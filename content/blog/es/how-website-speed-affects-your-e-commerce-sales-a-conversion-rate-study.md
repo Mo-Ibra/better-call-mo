@@ -1,7 +1,5 @@
 ---
-title: >-
-  La Regla de los 3 Segundos: Cómo 1 Segundo de Retraso Mató las Ventas de Mi
-  Cliente (Y Cómo Lo Solucionamos)
+title: "La regla de los 3 segundos: velocidad y ventas"
 description: >-
   Un análisis profundo de un caso real de e-commerce. Descubre cómo un retraso
   de 1 segundo en la carga de la página diezmó las tasas de conversión y los
@@ -22,6 +20,7 @@ tags:
   - Conversion Rate Optimization
 image: "/images/blog/how-website-speed-affects-your-e-commerce-sales-a-conversion-rate-study.jpg"
 ---
+
 ## El contenido comienza aquí...
 
 Era una tarde de martes cuando recibí la llamada. La voz al otro lado era una mezcla de pánico y pura frustración. Era Sarah, la fundadora de "Artisan Bloom", una próspera tienda online de productos de cerámica artesanal. Su negocio estaba recibiendo atención de la prensa, sus redes sociales estaban que ardían y su gasto en publicidad estaba generando un torrente de tráfico.

@@ -1,7 +1,5 @@
 ---
-title: >-
-  A Regra dos 3 Segundos: Como 1 Segundo de Atraso Matou as Vendas do Meu
-  Cliente (E Como Corrigimos)
+title: "A regra dos 3 segundos: velocidade e vendas"
 description: >-
   Um estudo de caso profundo de e-commerce. Descubra como 1 segundo de atraso no
   carregamento da página dizimou as taxas de conversão e as etapas técnicas

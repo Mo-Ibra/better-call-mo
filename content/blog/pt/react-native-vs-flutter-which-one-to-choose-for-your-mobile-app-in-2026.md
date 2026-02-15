@@ -1,5 +1,5 @@
 ---
-title: 'React Native vs Flutter: Qual Escolher para Seu Aplicativo Mobile em 2026'
+title: "React Native vs Flutter: o seu stack de apps em 2026"
 description: >-
   Uma comparação detalhada entre React Native e Flutter para desenvolvimento de
   aplicativos móveis, com insights reais de um desenvolvedor que construiu apps

@@ -1,5 +1,5 @@
 ---
-title: 'Why Your Site Isn''t on Page One: 5 Technical SEO Mistakes Killing Your Ranking'
+title: "5 errori SEO tecnici che distruggono il tuo ranking"
 description: >-
   Discover the hidden technical SEO errors keeping your website buried in
   Google's search results. Learn from a pro developer how to fix them and climb

@@ -1,7 +1,5 @@
 ---
-title: >-
-  Die 3-Sekunden-Regel: Wie eine 1-Sekunden-Verzögerung den Umsatz meines Kunden
-  zerstörte (und wie wir es gelöst haben)
+title: "Die 3-Sekunden-Regel: Website-Speed & Umsatz"
 description: >-
   Eine detaillierte E-Commerce-Fallstudie. Entdecken Sie, wie eine
   1-Sekunden-Ladezeitverzögerung die Conversion-Rates ruinierte und die exakten

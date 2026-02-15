@@ -1,7 +1,5 @@
 ---
-title: >-
-  Vom Küchentisch in die Cloud: Der praxisnahe Leitfaden für den kostengünstigen
-  Aufbau eines SaaS-Produkts
+title: "SaaS-Produkt mit Budget bauen: Ein Praxisleitfaden"
 description: >-
   Ein SaaS-Produkt zu entwickeln erfordert kein Silicon-Valley-Budget. Folgen
   Sie diesem Schritt-für-Schritt-Leitfaden, basierend auf einer echten

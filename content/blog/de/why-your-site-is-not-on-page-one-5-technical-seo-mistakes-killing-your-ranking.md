@@ -1,7 +1,5 @@
 ---
-title: >-
-  Warum Ihre Seite nicht auf Seite 1 steht: 5 Technische SEO-Fehler, die Ihr
-  Ranking ruinieren
+title: "5 technische SEO-Fehler, die Ihr Ranking ruinieren"
 description: >-
   Entdecken Sie die versteckten technischen SEO-Fehler, die Ihre Website in den
   Suchergebnissen von Google begraben. Erfahren Sie von einem Pro-Entwickler,

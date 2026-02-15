@@ -1,7 +1,5 @@
 ---
-title: >-
-  Por qué tu sitio no está en la primera página: 5 errores técnicos de SEO que
-  están matando tu posicionamiento
+title: "5 errores de SEO técnico que arruinan tu ranking"
 description: >-
   Descubre los errores técnicos de SEO ocultos que mantienen tu sitio web
   sepultado en los resultados de búsqueda de Google. Aprende de un desarrollador
