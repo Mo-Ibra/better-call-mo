@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props) {
   if (!qna) return {};
 
   return {
-    title: `${qna.question} | Ask Mo Community`,
+    title: `${qna.question}`,
     description: qna.answerBody.substring(0, 160).replace(/[#*]/g, ""),
     alternates: {
       canonical: `/ask-mo/${qna.slug}`,
