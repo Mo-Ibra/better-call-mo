@@ -89,6 +89,12 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 
       console.log(res);
 
+      if (res.status === 429) {
+        const data = await res.json();
+        alert(data.error || "Too many requests. Please try again later.");
+        return;
+      }
+
       if (res.ok) {
         console.log("Email sent successfully");
         setShowSuccess(true);

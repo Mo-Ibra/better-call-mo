@@ -35,6 +35,12 @@ export default function AnswerReplyForm({
         }),
       });
 
+      if (resp.status === 429) {
+        const data = await resp.json();
+        alert(data.error || "Too many requests. Please try again later.");
+        return;
+      }
+
       if (resp.ok) {
         setSuccess(true);
       } else {

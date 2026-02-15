@@ -29,6 +29,12 @@ export default function QuestionForm() {
         }),
       });
 
+      if (resp.status === 429) {
+        const data = await resp.json();
+        alert(data.error || "Too many requests. Please try again in an hour.");
+        return;
+      }
+
       if (resp.ok) {
         setSuccess(true);
       } else {

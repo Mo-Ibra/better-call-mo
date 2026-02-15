@@ -1,8 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 export async function POST(req: NextRequest) {
   try {
+    // 1. Rate Limiting Check (5 per hour)
+    const ip = req.headers.get("x-forwarded-for") || "unknown";
+    const { allowed, remaining } = checkRateLimit(ip);
+
+    if (!allowed) {
+      console.warn(`Rate limit exceeded for IP: ${ip}`);
+      return NextResponse.json(
+        { success: false, error: "Too many requests. Please try again in an hour." },
+        { status: 429 }
+      );
+    }
+
     const body = await req.json();
 
     // Spam Protection: Honeypot check
