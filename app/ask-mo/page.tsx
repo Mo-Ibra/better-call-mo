@@ -36,7 +36,7 @@ export default async function AskMoPage() {
                 Ask <span className="text-primary-400">Mo</span>
               </h1>
               <p className="text-xl text-gray-500 italic max-w-xl leading-relaxed">
-                The technical community board where "Saul Goodman" of code answers your toughest SaaS and SEO production questions.
+                The technical community board where "Mo" of code answers your toughest SaaS and SEO production questions.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">

@@ -13,17 +13,18 @@ export default function Navigation() {
   return (
     <nav className="sticky top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="text-2xl font-bold text-primary cursor-pointer"
-          >
-            {/* {"<Mo />"} */}
-            <Image src="/favicon.svg" width={36} height={36} alt="logo" />
-          </Link>
+        <div className="flex items-center">
+          {/* Left: Logo */}
+          <div className="flex-1">
+            <Link
+              href="/"
+              className="text-2xl font-bold text-primary cursor-pointer inline-block"
+            >
+              <Image src="/favicon.svg" width={36} height={36} alt="logo" />
+            </Link>
+          </div>
 
-          {/* Desktop Navigation */}
+          {/* Center: Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/#home"
@@ -69,40 +70,42 @@ export default function Navigation() {
             </Link>
           </div>
 
-          {/* Desktop Right Buttons (Ask Mo & Hire Me) */}
-          <div className="hidden md:flex items-center gap-3">
-            <Link href="/ask-mo" title="Have a Question?">
-              <Button
-                variant="ghost"
-                className="relative overflow-hidden group border border-white/5 bg-white/[0.03] backdrop-blur-sm hover:bg-primary/5 hover:border-primary/20 transition-all duration-500 rounded-xl px-6"
-              >
-                <span className="flex items-center gap-2 group-hover:text-primary transition-colors">
-                  <MessageSquare className="w-4 h-4" />
-                  Have a Question?
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-              </Button>
-            </Link>
-            <Link href="#contact" title="contact">
-              <Button className="bg-primary hover:bg-white text-black font-black rounded-xl px-6 shadow-lg shadow-primary/20 transition-all hover:scale-[1.02] active:scale-95">
-                Hire Me!
-              </Button>
-            </Link>
-          </div>
+          {/* Right: Desktop Buttons */}
+          <div className="flex-1 flex justify-end items-center gap-3">
+            <div className="hidden md:flex items-center gap-3">
+              <Link href="/ask-mo" title="Have a Question?">
+                <Button
+                  variant="ghost"
+                  className="relative overflow-hidden group border border-white/5 bg-white/[0.03] backdrop-blur-sm hover:bg-primary/5 hover:border-primary/20 transition-all duration-500 rounded-xl px-6"
+                >
+                  <span className="flex items-center gap-2 group-hover:text-primary transition-colors">
+                    <MessageSquare className="w-4 h-4" />
+                    Have a Question?
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                </Button>
+              </Link>
+              <Link href="#contact" title="contact">
+                <Button className="bg-primary text-white font-black rounded-xl px-6 shadow-lg shadow-primary/20 transition-all hover:scale-[1.02] active:scale-95">
+                  Hire Me!
+                </Button>
+              </Link>
+            </div>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? (
-              <X aria-label="Toggle Menu" />
-            ) : (
-              <Menu aria-label="Toggle Menu" />
-            )}
-          </Button>
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? (
+                <X aria-label="Toggle Menu" />
+              ) : (
+                <Menu aria-label="Toggle Menu" />
+              )}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
