@@ -81,7 +81,7 @@ export default async function QnADetailPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="pt-32 pb-20 px-6">
+      <div className="py-12 px-6">
         <div className="max-w-4xl mx-auto space-y-6">
           {/* Reddit-style Breadcrumbs */}
           <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gray-500 mb-4">
