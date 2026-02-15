@@ -73,4 +73,3 @@ Don't let a cheap, quick fix turn into an expensive, long-term problem. Your web
 Look for a developer who asks the right questions about your lead generation goals, your target neighborhoods, and your marketing strategy. If they're not talking about IDX, SEO, and mobile experience from the start, it's time to hang up and call someone who will. Someone who fights for your code.
 
 Your future clients are searching online right now. Make sure they can find you.
-```
