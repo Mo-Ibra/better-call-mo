@@ -89,12 +89,20 @@ async function main() {
       const translatedBody = await translateContent(body, lang, frontmatter.question);
 
       if (translatedBody) {
-        // We might also want to translate the question in frontmatter
+        // Translate the question
         const translatedQuestion = await translateContent('', lang, `JUST TRANSLATE THIS TITLE: ${frontmatter.question}`);
+
+        // Translate Keywords if they exist
+        let translatedKeywords = frontmatter.keywords || [];
+        if (translatedKeywords.length > 0) {
+          const kStr = await translateContent('', lang, `JUST TRANSLATE THIS COMMA SEPARATED LIST OF KEYWORDS: ${translatedKeywords.join(', ')}`);
+          translatedKeywords = kStr ? kStr.split(',').map(s => s.trim().replace(/^"|"$/g, '')) : translatedKeywords;
+        }
 
         const newFrontmatter = {
           ...frontmatter,
           question: translatedQuestion?.replace(/^"|"$/g, '') || frontmatter.question,
+          keywords: translatedKeywords,
           date: new Date().toISOString().split('T')[0]
         };
 

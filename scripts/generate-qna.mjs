@@ -18,17 +18,21 @@ async function generateQnA(topic, category) {
     ---
     question: "The user's question"
     category: "${category}"
-    author: "Better Call Mo"
-    date: "${new Date().toISOString().split('T')[0]}"
-    upvotes: ${Math.floor(Math.random() * 50) + 10}
-    relatedServices: ["mobile-app-development", "saas-mvp-development"]
+    askedByAvatar: A 2-letter string (e.g., "TF").
+    date: Current date in YYYY-MM-DD format.
+    upvotes: A random number between 1 and 10.
+    keywords: An array of 3-5 technical SEO keywords related to the question.
+    relatedServices: An array of 1-2 related service slugs from this list: ${SERVICES.map(s => s.slug).join(', ')}.
     ---
+    # H1 Title (Professional & Catchy)
+    Intro text...
     
     The body should be the detailed answer (minimum 300 words). 
     Use subheadings, code examples (if relevant), and clear advice.
-    
-    TOPIC: ${topic}
   `;
+
+  const userPrompt = `Write a professional Q&A thread about "${topic}" in the category "${category}". 
+    Format your response EXACTLY like the structure above with the frontmatter.`;
 
   try {
     const response = await fetch(OLLAMA_URL, {

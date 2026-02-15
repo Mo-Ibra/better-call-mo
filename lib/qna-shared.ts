@@ -12,6 +12,7 @@ export interface QnA {
   askedByAvatar?: string;
   date: string;
   upvotes: number;
+  keywords?: string[];
   relatedServices?: string[]; // slugs
   communityAnswers?: {
     author: string;
