@@ -84,5 +84,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   });
 
+  // 7. Q&A Threads
+  const qnas = await getAllQnAs();
+  qnas.forEach((qna) => {
+    sitemapEntries.push({
+      url: `${baseUrl}/ask-mo/${qna.slug}`,
+      lastModified: new Date(qna.date),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    });
+  });
+
   return sitemapEntries;
 }
