@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MessageSquare } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
@@ -69,10 +69,22 @@ export default function Navigation() {
             </Link>
           </div>
 
-          {/* Hire Me button */}
-          <div className="hidden md:block">
+          {/* Desktop Right Buttons (Ask Mo & Hire Me) */}
+          <div className="hidden md:flex items-center gap-3">
+            <Link href="/ask-mo" title="Have a Question?">
+              <Button
+                variant="ghost"
+                className="relative overflow-hidden group border border-white/5 bg-white/[0.03] backdrop-blur-sm hover:bg-primary/5 hover:border-primary/20 transition-all duration-500 rounded-xl px-6"
+              >
+                <span className="flex items-center gap-2 group-hover:text-primary transition-colors">
+                  <MessageSquare className="w-4 h-4" />
+                  Have a Question?
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+              </Button>
+            </Link>
             <Link href="#contact" title="contact">
-              <Button className="bg-primary hover:bg-primary/90">
+              <Button className="bg-primary hover:bg-white text-black font-black rounded-xl px-6 shadow-lg shadow-primary/20 transition-all hover:scale-[1.02] active:scale-95">
                 Hire Me!
               </Button>
             </Link>
@@ -152,16 +164,32 @@ export default function Navigation() {
                 >
                   Blog
                 </Link>
-                <Link
-                  href="/#contact"
-                  onClick={() => setIsOpen(false)}
-                  className="w-full"
-                  title="contact"
-                >
-                  <Button className="bg-primary hover:bg-primary/90 w-full">
-                    Contact Mo
-                  </Button>
-                </Link>
+                <div className="pt-2 flex flex-col gap-3">
+                  <Link
+                    href="/ask-mo"
+                    onClick={() => setIsOpen(false)}
+                    className="w-full"
+                    title="ask-mo"
+                  >
+                    <Button
+                      variant="ghost"
+                      className="w-full flex items-center justify-center gap-2 border border-white/5 bg-white/[0.03] hover:bg-primary/5 hover:border-primary/20 py-6 rounded-2xl"
+                    >
+                      <MessageSquare className="w-4 h-4 text-primary" />
+                      <span className="font-bold">Ask Mo</span>
+                    </Button>
+                  </Link>
+                  <Link
+                    href="/#contact"
+                    onClick={() => setIsOpen(false)}
+                    className="w-full"
+                    title="contact"
+                  >
+                    <Button className="bg-primary hover:bg-white text-black font-black w-full py-6 rounded-2xl shadow-lg shadow-primary/10">
+                      Hire Me!
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </motion.div>
           )}
