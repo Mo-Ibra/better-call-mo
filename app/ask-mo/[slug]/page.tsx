@@ -78,7 +78,7 @@ export default async function QnADetailPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="pt-32 pb-20 px-6">
+      <div className="py-12 px-6">
         <div className="max-w-4xl mx-auto space-y-12">
           {/* Back link */}
           <Link href="/ask-mo" className="inline-flex items-center gap-2 text-gray-500 hover:text-primary transition-colors font-bold text-sm uppercase tracking-widest">
