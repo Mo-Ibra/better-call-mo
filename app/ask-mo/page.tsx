@@ -19,7 +19,7 @@ export default async function AskMoPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 border-b border-white/5">
+      <section className="py-12 px-6 border-b border-white/5">
         <div className="max-w-6xl mx-auto text-center space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary-400 text-xs font-black uppercase tracking-widest rounded-full">
             <MessageSquare className="w-4 h-4" /> Community Q&A
