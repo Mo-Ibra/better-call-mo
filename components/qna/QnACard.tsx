@@ -1,7 +1,7 @@
 "use client";
 
-import type { QnA } from "@/lib/qna";
-import { ArrowBigUp, MessageSquare, Tag, Calendar, User } from "lucide-react";
+import type { QnA } from "@/lib/qna-shared";
+import { ArrowBigUp, MessageSquare } from "lucide-react";
 import Link from "next/link";
 
 export default function QnACard({ qna }: { qna: QnA }) {

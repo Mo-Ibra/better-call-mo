@@ -1,21 +1,44 @@
 "use client";
 
 import { useState } from "react";
-import { Send, Loader2, Sparkles } from "lucide-react";
+import { Send, Loader2, Sparkles, ChevronDown } from "lucide-react";
+import { QNA_CATEGORIES } from "@/lib/qna-shared";
 
 export default function QuestionForm() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    category: "Technical",
+    content: ""
+  });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate API call to /api/ask
-    setTimeout(() => {
+    try {
+      const resp = await fetch("/api/ask-mo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          type: "question"
+        }),
+      });
+
+      if (resp.ok) {
+        setSuccess(true);
+      } else {
+        alert("Something went wrong. Please try again or contact Mo directly.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Submission failed. Check your connection.");
+    } finally {
       setLoading(false);
-      setSuccess(true);
-    }, 1500);
+    }
   };
 
   if (success) {
@@ -24,6 +47,12 @@ export default function QuestionForm() {
         <Sparkles className="w-12 h-12 text-primary mx-auto mb-4" />
         <h3 className="text-2xl font-bold mb-2">Question Submitted!</h3>
         <p className="text-gray-400">Mo will review your question and it might appear on the community board soon. Check your inbox for a private reply.</p>
+        <button
+          onClick={() => setSuccess(false)}
+          className="mt-6 text-[10px] font-black uppercase tracking-widest text-primary hover:underline"
+        >
+          Ask another question
+        </button>
       </div>
     );
   }
@@ -44,6 +73,8 @@ export default function QuestionForm() {
               <label className="block text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1.5 ml-1">Username</label>
               <input
                 required
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder="e.g. CodeFighter99"
                 className="w-full bg-black border border-white/5 rounded-2xl px-5 py-3.5 focus:outline-none focus:border-primary/50 transition-colors text-sm"
               />
@@ -54,9 +85,28 @@ export default function QuestionForm() {
               <input
                 required
                 type="email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="you@company.com"
                 className="w-full bg-black border border-white/5 rounded-2xl px-5 py-3.5 focus:outline-none focus:border-primary/50 transition-colors text-sm"
               />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1.5 ml-1">Topic Category</label>
+            <div className="relative">
+              <select
+                required
+                value={formData.category}
+                onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                className="w-full bg-black border border-white/5 rounded-2xl px-5 py-3.5 focus:outline-none focus:border-primary/50 transition-colors text-sm appearance-none cursor-pointer"
+              >
+                {QNA_CATEGORIES.map(cat => (
+                  <option key={cat} value={cat}>{cat}</option>
+                ))}
+              </select>
+              <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" />
             </div>
           </div>
 
@@ -65,6 +115,8 @@ export default function QuestionForm() {
             <textarea
               required
               rows={4}
+              value={formData.content}
+              onChange={(e) => setFormData({ ...formData, content: e.target.value })}
               placeholder="What's killing your code right now?"
               className="w-full bg-black border border-white/5 rounded-2xl px-5 py-4 focus:outline-none focus:border-primary/50 transition-colors resize-none text-sm"
             />

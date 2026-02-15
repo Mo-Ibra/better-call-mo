@@ -201,7 +201,7 @@ export default async function QnADetailPage({ params }: Props) {
             {/* Add Your Reply Section */}
             <div className="ml-4 md:ml-12 pt-6">
               <h3 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4 ml-1">Contribute to the conversation</h3>
-              <AnswerReplyForm questionSlug={qna.slug} />
+              <AnswerReplyForm questionSlug={qna.slug} questionTitle={qna.question} />
             </div>
             {/* Related / Bottom Section */}
             <div className="mt-20 pt-20 border-t border-white/5 grid md:grid-cols-3 gap-12">

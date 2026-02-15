@@ -1,31 +1,10 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { QnA, Category, QNA_CATEGORIES } from "./qna-shared";
 
-export interface QnA {
-  slug: string;
-  question: string;
-  answerBody: string;
-  category: "Technical" | "SEO" | "Business" | "SaaS" | "Performance";
-  author: string;
-  askedBy: string;
-  askedByAvatar?: string;
-  date: string;
-  upvotes: number;
-  relatedServices?: string[]; // slugs
-  communityAnswers?: {
-    author: string;
-    avatar?: string;
-    date: string;
-    body: string;
-    upvotes: number;
-    isVerified?: boolean;
-  }[];
-}
-
-export type Category = QnA["category"];
-
-export const QNA_CATEGORIES: Category[] = ["Technical", "SEO", "Business", "SaaS", "Performance"];
+export type { QnA, Category };
+export { QNA_CATEGORIES };
 
 const QNA_DIR = path.join(process.cwd(), "content/qna");
 
