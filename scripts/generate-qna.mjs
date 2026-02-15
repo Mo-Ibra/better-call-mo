@@ -1,10 +1,17 @@
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
 
 const QNA_DIR = path.join(process.cwd(), 'content', 'qna');
 const OLLAMA_URL = 'http://localhost:11434/api/chat';
 const MODEL = 'deepseek-v3.1:671b-cloud'; // or your preferred model
+
+const SERVICES = [
+  { slug: 'nextjs-development', title: 'Next.js Development' },
+  { slug: 'shopify-to-nextjs', title: 'Shopify to Headless Next.js' },
+  { slug: 'saas-mvp-development', title: 'SaaS MVP Development' },
+  { slug: 'mobile-app-development', title: 'Mobile App Development' },
+  { slug: 'web-performance-optimization', title: 'Web Performance & SEO Speed Optimization' }
+];
 
 async function generateQnA(topic, category) {
   const systemPrompt = `
@@ -40,13 +47,21 @@ async function generateQnA(topic, category) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         model: MODEL,
-        messages: [{ role: 'user', content: systemPrompt }],
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userPrompt }
+        ],
         stream: false,
       }),
     });
 
     const data = await response.json();
-    return data.message.content;
+    let content = data.message.content;
+
+    // Clean up potential markdown code block wrappers
+    content = content.replace(/^```[a-z]*\n/i, '').replace(/\n```$/g, '').trim();
+
+    return content;
   } catch (error) {
     console.error('Error calling Ollama:', error);
     return null;
