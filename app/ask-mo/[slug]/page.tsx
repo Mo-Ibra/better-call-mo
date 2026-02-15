@@ -4,7 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ClientContactModal from "@/components/ClientContactModal";
 import QuestionForm from "@/components/qna/QuestionForm";
-import ReactMarkdown from "react-markdown";
+import FormattedMarkdown from "@/components/FormattedMarkdown";
 import { ArrowLeft, MessageCircle, Share2, ThumbsUp } from "lucide-react";
 import Link from "next/link";
 
@@ -111,7 +111,7 @@ export default async function QnADetailPage({ params }: Props) {
             </div>
 
             <article className="prose prose-invert prose-primary max-w-none prose-lg">
-              <ReactMarkdown>{qna.answerBody}</ReactMarkdown>
+              <FormattedMarkdown content={qna.answerBody} />
             </article>
 
             <div className="mt-12 pt-8 border-t border-white/5 flex flex-wrap items-center justify-between gap-6">
