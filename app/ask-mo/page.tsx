@@ -5,6 +5,8 @@ import QnACard from "@/components/qna/QnACard";
 import ClientContactModal from "@/components/ClientContactModal";
 import Link from "next/link";
 import { MessageSquare, Search, Plus } from "lucide-react";
+import { LanguageCode } from "@/lib/i18n.config";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export const metadata = {
   title: "Ask Mo | Community Q&A for Web Developers & SaaS Founders",
@@ -15,7 +17,7 @@ export const metadata = {
 };
 
 export default async function AskMoPage() {
-  const qnas = await getAllQnAs();
+  const qnas = await getAllQnAs("en");
 
   return (
     <main className="bg-black min-h-screen">
@@ -32,9 +34,12 @@ export default async function AskMoPage() {
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary text-[10px] font-black uppercase tracking-widest rounded-full border border-primary/20">
                 <MessageSquare className="w-3.5 h-3.5" /> Community Discussion
               </div>
-              <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight">
-                Ask <span className="text-primary-400">Mo</span>
-              </h1>
+              <div className="flex items-center justify-between">
+                <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight">
+                  Ask <span className="text-primary-400">Mo</span>
+                </h1>
+                <LanguageSwitcher currentLang={"en" as LanguageCode} />
+              </div>
               <p className="text-xl text-gray-500 italic max-w-xl leading-relaxed">
                 The technical community board where "Mo" of code answers your toughest SaaS and SEO production questions.
               </p>
@@ -78,7 +83,7 @@ export default async function AskMoPage() {
 
             <div className="space-y-8">
               {qnas.map(qna => (
-                <QnACard key={qna.slug} qna={qna} />
+                <QnACard key={qna.slug} qna={qna} lang="en" />
               ))}
 
               {qnas.length === 0 && (

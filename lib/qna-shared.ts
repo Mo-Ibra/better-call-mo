@@ -1,3 +1,7 @@
+import { LanguageCode } from "./i18n.config";
+
+export type { LanguageCode };
+
 export interface QnA {
   slug: string;
   question: string;

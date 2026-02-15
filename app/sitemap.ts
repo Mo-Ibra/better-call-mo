@@ -85,15 +85,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   });
 
   // 7. Q&A Threads
-  const qnas = await getAllQnAs();
-  qnas.forEach((qna) => {
-    sitemapEntries.push({
-      url: `${baseUrl}/ask-mo/${qna.slug}`,
-      lastModified: new Date(qna.date),
-      changeFrequency: "monthly",
-      priority: 0.7,
+  for (const lang of availableLanguages) {
+    const qnas = await getAllQnAs(lang);
+    qnas.forEach((qna) => {
+      const qnaUrl = lang === "en"
+        ? `${baseUrl}/ask-mo/${qna.slug}`
+        : `${baseUrl}/${lang}/ask-mo/${qna.slug}`;
+
+      sitemapEntries.push({
+        url: qnaUrl,
+        lastModified: new Date(qna.date),
+        changeFrequency: "monthly",
+        priority: 0.7,
+      });
     });
-  });
+  }
 
   return sitemapEntries;
 }

@@ -1,15 +1,16 @@
-# Better Call Mo: Blog Tools 🚀
+# Better Call Mo: AI Content Factory 🚀
 
-These scripts are designed to automate your content strategy using **Ollama** and **DeepSeek-V3**. They help you generate high-quality, long-form SEO articles and translate them into multiple languages in seconds.
+These scripts are the "secret sauce" of your technical authority. Powered by **Ollama** and **DeepSeek-V3.1**, they help you generate expert-level content and translate it to multiple languages in seconds. 
+
+Don't just write code – dominate the search rankings.
 
 ## Prerequisites
 
 1.  **Ollama:** Ensure [Ollama](https://ollama.com/) is installed and running locally.
-2.  **Model:** Pull the required model:
+2.  **Model:** Pull the required model (recommended: DeepSeek-V3 or similar):
     ```bash
     ollama pull deepseek-v3.1:671b-cloud
     ```
-    *(Note: You can change the `MODEL` constant in the scripts to use `llama3` or `mistral` if preferred.)*
 
 ---
 
@@ -22,9 +23,9 @@ node scripts/generate-blog.mjs "Your Article Topic"
 ```
 
 **What it does:**
--   **Human Tone:** Uses storytelling and professional anecdotes.
--   **Smart Linking:** Automatically finds opportunities to link to your `/services/` and `/web-developer/[city]` pages.
--   **Saves:** Creates a new `.md` file in `content/blog/`.
+-   **Mo's Persona:** Expert, slightly aggressive, and authoritative.
+-   **Smart Linking:** Finding conversion goals in every paragraph.
+-   **Output:** Saves to `content/blog/[slug].md`.
 
 ---
 
@@ -32,44 +33,47 @@ node scripts/generate-blog.mjs "Your Article Topic"
 Translates an existing English blog post into Spanish, Italian, German, and Portuguese.
 
 **Usage:**
--   **Translate to all 5 languages:**
-    ```bash
-    node scripts/translate-blog.mjs my-article-slug
-    ```
--   **Translate to a specific language (e.g., Spanish):**
-    ```bash
-    node scripts/translate-blog.mjs my-article-slug es
-    ```
-
-**What it does:**
--   **Preserves Structure:** Translates text but keeps all Markdown syntax, images, and links intact.
--   **Frontmatter Aware:** Translates SEO titles and descriptions while keeping JSON metadata keys untouched.
--   **Fast:** Leverages local GPU acceleration via Ollama.
+```bash
+node scripts/translate-blog.mjs my-article-slug
+```
 
 ---
 
 ## 3. Community Q&A Generator
-Generates expert-level technical answers for the "Ask Mo" Q&A system.
+Generates expert-level technical answers for the "Ask Mo" Q&A system. These are designed to trigger Google's **Q&A Rich Snippets**.
 
 **Usage:**
 ```bash
-node scripts/generate-qna.mjs "Your Question Here" "Category"
+node scripts/generate-qna.mjs "Your Technical Question" "Category"
 ```
-
 **Categories:** `Technical`, `SEO`, `Business`, `SaaS`, `Performance`.
 
+---
+
+## 4. Community Q&A Translator 🌍
+Translates all English Q&A posts into our 4 target languages (ES, IT, DE, PT) while keeping the technical tone intact.
+
+**Usage:**
+-   **Translate everything:**
+    ```bash
+    node scripts/translate-qna.mjs
+    ```
+-   **Translate a specific file:**
+    ```bash
+    node scripts/translate-qna.mjs "my-file.md"
+    ```
+
 **What it does:**
--   **QAPage Schema:** Generates content specifically designed to trigger Google's Q&A Rich Snippets.
--   **Expert Branding:** Writes in Mo's signature expert-yet-approachable voice.
--   **Internal Funneling:** Automatically suggests related services based on the question topic.
+-   **Localized Directories:** Places files in `content/qna/es/`, `content/qna/it/`, etc.
+-   **Frontmatter Aware:** Translates the question title while keeping IDs and meta-data consistent.
 
 ---
 
 ## Strategy: The Content Cluster
-These tools are built to support a **Topic Cluster** SEO strategy. 
--   **Generation** creates the "Informational" content.
--   **Internal Linking** passes authority to your "Transactional" service pages.
--   **Translation** expands your reach to global markets (Germany, Spain, Brazil, Italy).
--   **Q&A** captures long-tail search intent and builds community trust.
+These tools are built to support a **Global Authority** strategy: 
+-   **Blog:** Top-of-funnel awareness and depth.
+-   **Q&A:** Captures long-tail "How to" intent and builds direct trust.
+-   **Multi-lingual:** Reaches markets your competitors are ignoring.
+-   **Sitemap:** Automatically pushes all new dynamic content to search engines.
 
-**Happy Writing!** ✍️
+**Better call Mo, and let the AI do the heavy lifting.** ✍️⚖️

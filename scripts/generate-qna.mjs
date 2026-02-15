@@ -19,11 +19,9 @@ async function generateQnA(topic, category) {
     question: "The user's question"
     category: "${category}"
     author: "Better Call Mo"
-    askedBy: "A fictional professional developer or founder name (e.g., Sarah Jenkins, CTO at Nexa)"
-    askedByAvatar: "A 2-letter initial"
     date: "${new Date().toISOString().split('T')[0]}"
-    upvotes: ${Math.floor(Math.random() * 100) + 10}
-    relatedServices: ["slug1", "slug2"]
+    upvotes: ${Math.floor(Math.random() * 50) + 10}
+    relatedServices: ["mobile-app-development", "saas-mvp-development"]
     ---
     
     The body should be the detailed answer (minimum 300 words). 

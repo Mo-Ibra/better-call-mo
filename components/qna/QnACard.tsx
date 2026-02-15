@@ -1,10 +1,11 @@
 "use client";
 
-import type { QnA } from "@/lib/qna-shared";
+import type { QnA, LanguageCode } from "@/lib/qna-shared";
 import { ArrowBigUp, MessageSquare } from "lucide-react";
 import Link from "next/link";
 
-export default function QnACard({ qna }: { qna: QnA }) {
+export default function QnACard({ qna, lang = "en" }: { qna: QnA, lang?: LanguageCode }) {
+  const qnaHref = lang === "en" ? `/ask-mo/${qna.slug}` : `/${lang}/ask-mo/${qna.slug}`;
   return (
     <div className="group bg-zinc-900/40 border border-white/5 rounded-xl hover:border-white/10 transition-all">
       <div className="flex">
@@ -26,7 +27,7 @@ export default function QnACard({ qna }: { qna: QnA }) {
             <span>{qna.date}</span>
           </div>
 
-          <Link href={`/ask-mo/${qna.slug}`} className="block">
+          <Link href={qnaHref} className="block">
             <h3 className="text-xl md:text-2xl font-bold group-hover:text-primary transition-colors leading-tight">
               {qna.question}
             </h3>
@@ -39,7 +40,7 @@ export default function QnACard({ qna }: { qna: QnA }) {
           <div className="pt-2 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <Link
-                href={`/ask-mo/${qna.slug}`}
+                href={qnaHref}
                 className="flex items-center gap-1.5 text-xs font-black text-gray-500 hover:bg-white/5 px-2 py-1 rounded transition-colors"
               >
                 <MessageSquare className="w-4 h-4" /> 1 Answer
