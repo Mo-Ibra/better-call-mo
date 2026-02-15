@@ -18,9 +18,12 @@ export default function Navigation() {
           <div className="flex-1">
             <Link
               href="/"
-              className="text-2xl font-bold text-primary cursor-pointer inline-block"
+              className="flex items-center gap-2.5 text-xl font-black text-white hover:text-primary transition-colors cursor-pointer group"
             >
-              <Image src="/favicon.svg" width={36} height={36} alt="logo" />
+              <Image src="/favicon.svg" width={32} height={32} alt="logo" className="group-hover:rotate-12 transition-transform" />
+              <span className="hidden md:inline-block tracking-tighter">
+                Better Call <span className="text-primary">Mo</span>
+              </span>
             </Link>
           </div>
 
