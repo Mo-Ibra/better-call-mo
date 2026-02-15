@@ -8,9 +8,19 @@ export interface QnA {
   answerBody: string;
   category: "Technical" | "SEO" | "Business" | "SaaS" | "Performance";
   author: string;
+  askedBy: string;
+  askedByAvatar?: string;
   date: string;
   upvotes: number;
   relatedServices?: string[]; // slugs
+  communityAnswers?: {
+    author: string;
+    avatar?: string;
+    date: string;
+    body: string;
+    upvotes: number;
+    isVerified?: boolean;
+  }[];
 }
 
 export type Category = QnA["category"];
@@ -37,9 +47,12 @@ export async function getAllQnAs(): Promise<QnA[]> {
         answerBody: content,
         category: data.category,
         author: data.author,
+        askedBy: data.askedBy || "Community Member",
+        askedByAvatar: data.askedByAvatar || "",
         date: data.date,
         upvotes: data.upvotes || 0,
         relatedServices: data.relatedServices || [],
+        communityAnswers: data.communityAnswers || [],
       } as QnA;
     });
 
@@ -59,8 +72,11 @@ export async function getQnABySlug(slug: string): Promise<QnA | null> {
     answerBody: content,
     category: data.category,
     author: data.author,
+    askedBy: data.askedBy || "Community Member",
+    askedByAvatar: data.askedByAvatar || "",
     date: data.date,
     upvotes: data.upvotes || 0,
     relatedServices: data.relatedServices || [],
+    communityAnswers: data.communityAnswers || [],
   } as QnA;
 }

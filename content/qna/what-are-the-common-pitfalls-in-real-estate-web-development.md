@@ -2,6 +2,8 @@
 question: "What are the common pitfalls in real estate web development?"
 category: "Business"
 author: "Better Call Mo"
+askedBy: "James Miller"
+askedByAvatar: "JM"
 date: "2026-02-15"
 upvotes: 21
 relatedServices: ["mobile-app-development", "saas-mvp-development"]

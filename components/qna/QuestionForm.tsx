@@ -29,51 +29,53 @@ export default function QuestionForm() {
   }
 
   return (
-    <div className="bg-zinc-900 border border-white/5 p-10 rounded-3xl relative overflow-hidden group">
+    <div className="bg-zinc-900 border border-white/5 p-8 md:p-10 rounded-[2.5rem] relative overflow-hidden group shadow-2xl">
       <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
         <Sparkles className="w-32 h-32 text-primary" />
       </div>
 
       <div className="relative z-10">
-        <h2 className="text-3xl font-black mb-2">Have a technical doubt?</h2>
-        <p className="text-gray-400 mb-8">Ask Mo directly. Whether it is SEO, Next.js, or SaaS strategy, I fight for your code excellence.</p>
+        <h2 className="text-3xl font-black mb-2">Technical Doubt?</h2>
+        <p className="text-gray-400 mb-8 text-sm leading-relaxed">Post your question to the community. Mo reviews and answers the toughest technical challenges.</p>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label className="block text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">Your Name</label>
-            <input
-              required
-              placeholder="e.g. Saul Goodman"
-              className="w-full bg-black border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-primary transition-colors"
-            />
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1.5 ml-1">Username</label>
+              <input
+                required
+                placeholder="e.g. CodeFighter99"
+                className="w-full bg-black border border-white/5 rounded-2xl px-5 py-3.5 focus:outline-none focus:border-primary/50 transition-colors text-sm"
+              />
+            </div>
+
+            <div>
+              <label className="block text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1.5 ml-1">Work Email</label>
+              <input
+                required
+                type="email"
+                placeholder="you@company.com"
+                className="w-full bg-black border border-white/5 rounded-2xl px-5 py-3.5 focus:outline-none focus:border-primary/50 transition-colors text-sm"
+              />
+            </div>
           </div>
 
           <div>
-            <label className="block text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">Work Email</label>
-            <input
-              required
-              type="email"
-              placeholder="saul@lalo-law.com"
-              className="w-full bg-black border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-primary transition-colors"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">The Question</label>
+            <label className="block text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1.5 ml-1">The Question</label>
             <textarea
               required
               rows={4}
-              placeholder="Be as specific as possible..."
-              className="w-full bg-black border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-primary transition-colors resize-none"
+              placeholder="What's killing your code right now?"
+              className="w-full bg-black border border-white/5 rounded-2xl px-5 py-4 focus:outline-none focus:border-primary/50 transition-colors resize-none text-sm"
             />
           </div>
 
           <button
             disabled={loading}
-            className="w-full bg-primary text-black font-black py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-primary-400 transition-all disabled:opacity-50"
+            className="w-full bg-primary text-black font-black py-4 rounded-2xl flex items-center justify-center gap-3 hover:bg-white transition-all disabled:opacity-50 text-xs tracking-widest uppercase"
           >
-            {loading ? <Loader2 className="w-6 h-6 animate-spin" /> : <Send className="w-6 h-6" />}
-            SUBMIT QUESTION
+            {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
+            POST TO COMMUNITY
           </button>
         </form>
       </div>

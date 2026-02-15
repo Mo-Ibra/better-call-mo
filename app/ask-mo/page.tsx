@@ -49,8 +49,8 @@ export default async function AskMoPage() {
               <h2 className="text-2xl font-bold">Trending Topics</h2>
               <div className="flex gap-2">
                 {QNA_CATEGORIES.map(cat => (
-                  <button key={cat} className="px-4 py-1.5 bg-white/5 border border-white/5 rounded-lg text-xs font-bold hover:bg-white/10 transition-colors uppercase">
-                    {cat}
+                  <button key={cat} className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[10px] font-black hover:bg-primary/20 hover:text-primary transition-all uppercase tracking-widest">
+                    r/{cat}
                   </button>
                 ))}
               </div>
@@ -69,24 +69,41 @@ export default async function AskMoPage() {
             </div>
           </div>
 
-          {/* Sidebar: Ask Form & Stats */}
-          <div className="space-y-10 h-sticky top-32">
-            <QuestionForm />
+          {/* Sidebar: Forum Rules & Community Info */}
+          <div className="space-y-8 h-fit sticky top-32">
+            <div className="bg-zinc-900 border border-white/5 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="h-12 bg-primary/20 flex items-center px-6">
+                <h3 className="font-black text-[10px] uppercase tracking-widest text-primary-400">About r/AskMo</h3>
+              </div>
+              <div className="p-6 space-y-4">
+                <p className="text-xs text-gray-400 leading-relaxed">
+                  A technical space for founders and devs. Mo (Senior Web Architect) provides verified solutions to your toughest production bottlenecks.
+                </p>
+                <div className="grid grid-cols-2 gap-4 border-y border-white/5 py-4">
+                  <div>
+                    <p className="text-lg font-black">1.2k</p>
+                    <p className="text-[10px] text-gray-500 uppercase font-bold">Members</p>
+                  </div>
+                  <div>
+                    <p className="text-lg font-black">24</p>
+                    <p className="text-[10px] text-gray-500 uppercase font-bold">Online</p>
+                  </div>
+                </div>
+                <QuestionForm />
+              </div>
+            </div>
 
-            <div className="bg-gradient-to-br from-primary-900/20 to-black border border-primary-500/10 p-8 rounded-3xl">
-              <h3 className="font-bold text-xl mb-4 text-primary">Why ask Mo?</h3>
-              <ul className="space-y-4">
-                <li className="flex gap-3 text-sm text-gray-400">
-                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 shrink-0" />
-                  Answers based on real-world production data.
+            <div className="bg-zinc-900 border border-white/5 p-6 rounded-2xl">
+              <h3 className="font-black text-[10px] uppercase tracking-widest text-gray-500 mb-4">Community Rules</h3>
+              <ul className="space-y-3">
+                <li className="text-[11px] text-gray-400 flex gap-2">
+                  <span className="text-gray-600">1.</span> Be technical and specific.
                 </li>
-                <li className="flex gap-3 text-sm text-gray-400">
-                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 shrink-0" />
-                  Performance-first mindset (Core Web Vitals).
+                <li className="text-[11px] text-gray-400 flex gap-2">
+                  <span className="text-gray-600">2.</span> No SEO spam, only value.
                 </li>
-                <li className="flex gap-3 text-sm text-gray-400">
-                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 shrink-0" />
-                  SEO-driven architectural advice.
+                <li className="text-[11px] text-gray-400 flex gap-2">
+                  <span className="text-gray-600">3.</span> Respect the "Saul Goodman" attitude.
                 </li>
               </ul>
             </div>
