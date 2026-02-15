@@ -3,17 +3,25 @@ import { getAllBlogPosts } from "@/lib/blog";
 import { availableLanguages, LanguageCode } from "@/lib/i18n.config";
 import { locations } from "@/lib/locations";
 import { services } from "@/lib/services";
+import { getAllQnAs } from "@/lib/qna";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://bettercallmo.dev";
   const sitemapEntries: MetadataRoute.Sitemap = [];
 
-  // 1. Main page
+  // 1. Main page & Static Pages
   sitemapEntries.push({
     url: baseUrl,
     lastModified: new Date(),
     changeFrequency: "yearly",
     priority: 1,
+  });
+
+  sitemapEntries.push({
+    url: `${baseUrl}/ask-mo`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.8,
   });
 
   // 2. Pages for each language

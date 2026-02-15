@@ -48,10 +48,28 @@ Translates an existing English blog post into Spanish, Italian, German, and Port
 
 ---
 
+## 3. Community Q&A Generator
+Generates expert-level technical answers for the "Ask Mo" Q&A system.
+
+**Usage:**
+```bash
+node scripts/generate-qna.mjs "Your Question Here" "Category"
+```
+
+**Categories:** `Technical`, `SEO`, `Business`, `SaaS`, `Performance`.
+
+**What it does:**
+-   **QAPage Schema:** Generates content specifically designed to trigger Google's Q&A Rich Snippets.
+-   **Expert Branding:** Writes in Mo's signature expert-yet-approachable voice.
+-   **Internal Funneling:** Automatically suggests related services based on the question topic.
+
+---
+
 ## Strategy: The Content Cluster
 These tools are built to support a **Topic Cluster** SEO strategy. 
 -   **Generation** creates the "Informational" content.
 -   **Internal Linking** passes authority to your "Transactional" service pages.
 -   **Translation** expands your reach to global markets (Germany, Spain, Brazil, Italy).
+-   **Q&A** captures long-tail search intent and builds community trust.
 
 **Happy Writing!** ✍️

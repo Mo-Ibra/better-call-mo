@@ -1,11 +1,11 @@
 ---
 title: "SaaS MVP in 2026: The Secret Sauce I Learned Building 'Project Nexus'"
 description: "Learn the step-by-step process of building a successful SaaS MVP in 2026. A real-world case study from Better Call Mo covering tech stack, AI integration, and avoiding common pitfalls."
-date: "2026-02-09"
+date: '2026-02-15'
 author: "Better Call Mo"
 keywords: ["saas mvp development", "building saas mvp", "minimum viable product 2026", "nextjs saas application", "ship saas fast"]
 tags: ["SaaS", "MVP", "Startup", "Next.js", "Development"]
-image: "/images/blog/placeholder.jpg"
+image: "/images/blog/saas-mvp.jpg"
 ---
 
 ## The Beta Tester Who Changed Everything

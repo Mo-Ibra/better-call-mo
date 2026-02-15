@@ -6,7 +6,7 @@ import matter from 'gray-matter';
 const OLLAMA_API = 'http://localhost:11434/api/chat';
 const MODEL = 'deepseek-v3.1:671b-cloud'; // or 'mistral', 'qwen2', etc.
 const TARGET_LANGS = ['es', 'it', 'de', 'pt']; // 'en' is source
-const BLOG_DIR = path.join(process.cwd(), '../content/blog');
+const BLOG_DIR = path.join(process.cwd(), '/content/blog');
 
 // Language Names
 const LANG_NAMES = {

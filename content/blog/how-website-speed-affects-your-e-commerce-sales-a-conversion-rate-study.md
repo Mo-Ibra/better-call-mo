@@ -1,11 +1,11 @@
 ---
 title: "The 3-Second Rule: How a 1-Second Delay Killed My Client's Sales (And How We Fixed It)"
 description: "A deep dive into a real e-commerce case study. Discover how a 1-second page load delay decimated conversion rates and the exact, technical steps we took to triple their sales in 30 days by focusing on web performance optimization."
-date: "2026-02-09"
+date: '2026-02-15'
 author: "Better Call Mo"
 keywords: ["e-commerce conversion rate study", "core web vitals impact on sales", "Next.js performance optimization for e-commerce", "javascript bundling for e-commerce", "server response time optimization"]
 tags: ["E-commerce", "Web Performance", "SEO", "Conversion Rate Optimization"]
-image: "/images/blog/placeholder.jpg"
+image: "/images/blog/how-website-speed-affects-your-e-commerce-sales-a-conversion-rate-study.jpg"
 ---
 
 ## The Content Starts Here...

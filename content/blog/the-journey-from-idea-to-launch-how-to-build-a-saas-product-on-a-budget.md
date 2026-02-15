@@ -1,11 +1,11 @@
 ---
 title: "From Kitchen Table to Cloud: The Real-World Guide to Building a SaaS Product on a Budget"
 description: "Building a SaaS product doesn't require a Silicon Valley budget. Follow this step-by-step guide based on a real client journey to launch your MVP without breaking the bank."
-date: "2026-02-09"
+date: '2026-02-15'
 author: "Better Call Mo"
 keywords: ["build saas on a budget", "saas mvp development", "low-cost saas tools", "next.js for saas", "bootstrapping a saas"]
 tags: ["SaaS", "Web Development", "Startups", "Next.js", "Budgeting"]
-image: "/images/blog/placeholder.jpg"
+image: "/images/blog/saas-on-a-budget.jpg"
 ---
 
 ## The Content Starts Here...
@@ -102,6 +102,4 @@ Sarah’s story isn’t unique. It’s a repeatable formula for building somethi
 
 You have the idea. You now have the roadmap. The only thing left is to start.
 
----
 **If you’re sitting on a brilliant SaaS idea but are feeling stuck by the technical hurdles and budget constraints, let's talk. I've guided dozens of founders through this exact journey, turning their vision into a scalable, revenue-generating reality. Book a free, no-obligation discovery call with me today, and let's build your MVP.**
----

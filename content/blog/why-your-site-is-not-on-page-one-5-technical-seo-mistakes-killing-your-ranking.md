@@ -1,11 +1,11 @@
 ---
 title: "Why Your Site Isn't on Page One: 5 Technical SEO Mistakes Killing Your Ranking"
 description: "Discover the hidden technical SEO errors keeping your website buried in Google's search results. Learn from a pro developer how to fix them and climb to page one."
-date: "2026-02-09"
+date: "2026-02-15"
 author: "Better Call Mo"
 keywords: ["technical SEO", "page one ranking", "SEO mistakes", "website speed", "core web vitals", "mobile-first indexing", "crawling issues", "structured data"]
 tags: ["SEO", "Web Development", "Technical SEO", "Google Ranking"]
-image: "/images/blog/placeholder.jpg"
+image: "/images/blog/why-your-site-is-not-on-page-one-5-technical-seo-mistakes-killing-your-ranking.jpg"
 ---
 
 ## The Content Starts Here...
