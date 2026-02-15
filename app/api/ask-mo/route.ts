@@ -5,7 +5,7 @@ import { checkRateLimit } from "@/lib/rate-limit";
 export async function POST(req: NextRequest) {
   try {
     // 1. Rate Limiting Check (5 per hour)
-    const ip = req.headers.get("x-forwarded-for") || "unknown";
+    const ip = req.headers.get("x-real-ip") || req.headers.get("x-forwarded-for") || "unknown";
     const { allowed } = checkRateLimit(ip);
 
     if (!allowed) {
@@ -45,8 +45,11 @@ export async function POST(req: NextRequest) {
         </div>
         <div style="padding: 30px; background: #fff;">
           <h2 style="color: #333; margin-top: 0;">${body.type === 'reply' ? 'Community Reply' : 'New Question Received'}</h2>
-          
           <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #666; width: 120px;"><b>IP Address:</b></td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #000;">${ip}</td>
+            </tr>
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #666; width: 120px;"><b>Name:</b></td>
               <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #000;">${body.name}</td>

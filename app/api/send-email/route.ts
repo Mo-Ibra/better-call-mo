@@ -5,7 +5,7 @@ import { checkRateLimit } from "@/lib/rate-limit";
 export async function POST(req: NextRequest) {
   try {
     // 1. Rate Limiting Check (5 per hour)
-    const ip = req.headers.get("x-forwarded-for") || "unknown";
+    const ip = req.headers.get("x-real-ip") || req.headers.get("x-forwarded-for") || "unknown";
     const { allowed, remaining } = checkRateLimit(ip);
 
     if (!allowed) {
@@ -39,6 +39,7 @@ export async function POST(req: NextRequest) {
       subject: "Better Call Mo - New Submission",
       html: `
         <h2>New Submission</h2>
+        <p><b>IP Address:</b> ${ip}</p>
         <p><b>Full Name:</b> ${body.fullName}</p>
         <p><b>Email:</b> ${body.email}</p>
         <p><b>Project Type:</b> ${body.projectType}</p>
